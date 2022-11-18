@@ -1,5 +1,8 @@
-﻿using CorgiShop.Repo.Model;
+﻿using AutoMapper;
+using CorgiShop.Repo;
+using CorgiShop.Repo.Model;
 using Microsoft.EntityFrameworkCore;
+using Moq;
 
 namespace CorgiShop.Tests.Base
 {

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CorgiShop.Biz.Requests.Base;
 using CorgiShop.Repo;
 using CorgiShop.Repo.Model;
 using MediatR;
@@ -8,24 +9,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Biz.Requests.Products
+namespace CorgiShop.Biz.Requests.Products;
+
+public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, GetProductsDto>
 {
-    public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, IEnumerable<ProductDto>>
+    private const int MAX_PAGE_SIZE = 100;
+
+    private readonly IProductsRepository _corgiShopRepo;
+    private readonly IMapper _mapper;
+
+    public GetProductsQueryHandler(
+        IProductsRepository corgiShopRepo,
+        IMapper mapper)
     {
-        private readonly IProductsRepository _corgiShopRepo;
-        private readonly IMapper _mapper;
+        _corgiShopRepo = corgiShopRepo;
+        _mapper = mapper;
+    }
 
-        public GetProductsQueryHandler(
-            IProductsRepository corgiShopRepo,
-            IMapper mapper)
-        {
-            _corgiShopRepo = corgiShopRepo;
-            _mapper = mapper;
-        }
+    public async Task<GetProductsDto> Handle(GetProductsQuery request, CancellationToken cancellationToken)
+    {
+        //Quasi-auto-correct of page size if something sends huge limit to API
+        //Db protections are also in place further down
+        int clampedPageSize = Math.Min(request.Limit, MAX_PAGE_SIZE);
 
-        public async Task<IEnumerable<ProductDto>> Handle(GetProductsQuery request, CancellationToken cancellationToken)
+        int total = await _corgiShopRepo.GetTotalAvailable();
+        var results = (await _corgiShopRepo.GetPaginated(clampedPageSize, request.Offset)).Select(p => _mapper.Map<Product, ProductDto>(p));
+
+        return new GetProductsDto()
         {
-            return (await _corgiShopRepo.GetAll(request.Filter)).Select(p => _mapper.Map<Product, ProductDto>(p));
-        }
+            Page = QueryPageDto.FromCurrentPage(total, clampedPageSize, request.Offset),
+            TotalAvailable = total,
+            TotalReturned = results?.Count() ?? 0,
+            Results = results
+        };
     }
 }

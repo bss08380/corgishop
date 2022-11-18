@@ -9,7 +9,8 @@ namespace CorgiShop.Repo
 {
     public interface IProductsRepository
     {
-        Task<IEnumerable<Product>> GetAll(string nameFilter);
+        Task<int> GetTotalAvailable();
+        Task<IEnumerable<Product>> GetPaginated(int limit, int offset);
         Task Delete(int productId);
     }
 }
