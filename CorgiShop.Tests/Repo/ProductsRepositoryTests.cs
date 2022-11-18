@@ -1,6 +1,7 @@
 ﻿using CorgiShop.Repo;
 using CorgiShop.Repo.Model;
 using CorgiShop.Tests.Base;
+using System.Security.Cryptography;
 
 namespace CorgiShop.Tests.Repo
 {
@@ -9,36 +10,80 @@ namespace CorgiShop.Tests.Repo
         private Random _rand = new Random();
 
         [Fact]
-        public async Task GetAll_NoneDeleted()
+        public async Task GetPaginated_NoneDeleted()
         {
             //Arrange
             var uut = await GetUut(10, 0);
             //Act
-            var products = await uut.GetAll("");
+            var products = await uut.GetPaginated(100, 0);
             //Assert
             Assert.Equal(10, products.Count());
         }
 
         [Fact]
-        public async Task GetAll_SomeDeleted()
+        public async Task GetPaginated_SomeDeleted()
         {
             //Arrange
             var uut = await GetUut(10, 5);
             //Act
-            var products = await uut.GetAll("");
+            var products = await uut.GetPaginated(100, 0);
             //Assert
             Assert.Equal(10, products.Count());
         }
 
         [Fact]
-        public async Task GetAll_AllDeleted()
+        public async Task GetPaginated_AllDeleted()
         {
             //Arrange
             var uut = await GetUut(0, 15);
             //Act
-            var products = await uut.GetAll("");
+            var products = await uut.GetPaginated(100, 0);
             //Assert
             Assert.Empty(products);
+        }
+
+        [Fact]
+        public async Task GetPaginated_DbMaxFetchLimit()
+        {
+            //Arrange
+            var uut = await GetUut(500, 0);
+            //Act
+            var products = await uut.GetPaginated(1000, 0);
+            //Assert
+            Assert.Equal(200, products.Count());
+        }
+
+        [Fact]
+        public async Task GetPaginated_LimitOffset_CorrectAmt()
+        {
+            //Arrange
+            var uut = await GetUut(100, 0);
+            //Act
+            var products = await uut.GetPaginated(10, 0);
+            //Assert
+            Assert.Equal(10, products.Count());
+        }
+
+        [Fact]
+        public async Task GetPaginated_LimitOffset_SequentialResultsFromZero()
+        {
+            //Arrange
+            var uut = await GetUut(20, 0);
+            //Act
+            var products = await uut.GetPaginated(10, 0);
+            //Assert
+            Assert.True(VerifySequentialCollectionByPidName(products, 0));
+        }
+
+        [Fact]
+        public async Task GetPaginated_LimitOffset_SequentialResultsFromMidpoint()
+        {
+            //Arrange
+            var uut = await GetUut(20, 0);
+            //Act
+            var products = await uut.GetPaginated(10, 10);
+            //Assert
+            Assert.True(VerifySequentialCollectionByPidName(products, 10));
         }
 
         [Fact]
@@ -68,30 +113,50 @@ namespace CorgiShop.Tests.Repo
 
         private async Task<IProductsRepository> GetUut(int productCnt, int deletedCnt)
         {
+            int testPid = 0;
             var dbContext = await RigCorgiShopDbContext(db =>
             {
                 for (var i = 0; i < productCnt; i++)
                 {
-                    db.Products.Add(NewProduct(false));
+                    db.Products.Add(NewProduct(false, testPid));
+                    testPid++;
                 }
 
                 for (var i = 0; i < deletedCnt; i++)
                 {
-                    db.Products.Add(NewProduct(true));
+                    db.Products.Add(NewProduct(true, testPid));
+                    testPid++;
                 }
             });
             return new ProductsRepository(dbContext);
         }
 
-        private Product NewProduct(bool isDeleted)
+        private Product NewProduct(bool isDeleted, int testingPid)
         {
             return new Product() {
-                Name = Guid.NewGuid().ToString(),
-                Description = Guid.NewGuid().ToString(),
+                Name = GetTestingIdxString(testingPid),
+                Description = testingPid.ToString(),
                 Price = 0.0M,
                 Stock = 0,
                 IsDeleted = isDeleted
                 };
+        }
+
+        private bool VerifySequentialCollectionByPidName(IEnumerable<Product> products, int startPid)
+        {
+            int pid = startPid;
+            foreach (var product in products)
+            {
+                if (!product.IsDeleted && product.Name != GetTestingIdxString(pid))
+                    return false;
+                pid++;
+            }
+            return true;
+        }
+
+        private string GetTestingIdxString(int value)
+        {
+            return ((char)(0x41 + value)).ToString();
         }
 
     }

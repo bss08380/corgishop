@@ -1,14 +1,11 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace CorgiShop.Biz.Requests.Products
+namespace CorgiShop.Biz.Requests.Products;
+
+public class GetProductsQuery : IRequest<GetProductsDto>
 {
-    public class GetProductsQuery : IRequest<IEnumerable<ProductDto>>
-    {
-        public string Filter { get; set; } = string.Empty;
-    }
+    public int Limit { get; set; }
+    public int Offset { get; set; }
+
+    public string Filter { get; set; } = string.Empty;
 }
