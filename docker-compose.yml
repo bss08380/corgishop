@@ -1,0 +1,56 @@
+services:
+  api-asp:
+    container_name: corgishop-api
+    build: .
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=djh34_8f__ndslfu3nmfo
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/corgishop.pfx
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    networks:
+      corginet:
+        ipv4_address: 192.168.55.10
+
+  cache-redis:
+    container_name: corgishop-cache
+    image: "redis:alpine"
+    networks:
+      corginet:
+        ipv4_address: 192.168.55.9
+
+  db-sql:
+    container_name: corgishop-db
+    build: ./SQL
+    ports:
+      - "1433:1433"
+    networks:
+      corginet:
+        ipv4_address: 192.168.55.8
+    environment:
+      SA_PASSWORD: "dhd743hf_g83hdf_gsd89g"
+      ACCEPT_EULA: "Y"
+
+  migrations:
+    container_name: corgishop-flyway
+    image: flyway/flyway
+    command: -url='jdbc:sqlserver://db-sql;databaseName=CorgiShop;trustServerCertificate=true' -user=sa -password=dhd743hf_g83hdf_gsd89g -connectRetries=60 migrate
+    volumes:
+      - ./SQL/FlywayMigrations:/flyway/sql
+    depends_on:
+      - db-sql
+    networks:
+      corginet:
+        ipv4_address: 192.168.55.15
+
+networks:
+  corginet:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 192.168.55.0/24
+         gateway: 192.168.55.1
