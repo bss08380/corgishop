@@ -17,10 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CorgiShop.App\CorgiShop.App.csproj" />
+    <ProjectReference Include="..\CorgiShop.Application\CorgiShop.Application.csproj" />
     <ProjectReference Include="..\CorgiShop.Common\CorgiShop.Common.csproj" />
-    <ProjectReference Include="..\CorgiShop.Cqrs\CorgiShop.Biz.csproj" />
-    <ProjectReference Include="..\CorgiShop.Repo\CorgiShop.Repo.csproj" />
+    <ProjectReference Include="..\CorgiShop.Domain\CorgiShop.Domain.csproj" />
+    <ProjectReference Include="..\CorgiShop\CorgiShop.csproj" />
   </ItemGroup>
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">

@@ -5,16 +5,16 @@ using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using System.IdentityModel.Tokens.Jwt;
-using CorgiShop.Repo.Model;
+using CorgiShop.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
-using CorgiShop.Biz.Requests.Products;
-using CorgiShop.Biz;
+using CorgiShop.Application.Requests.Products;
+using CorgiShop.Application;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using CorgiShop.Api.Infrastructure;
 using CorgiShop.Common.Ioc;
-using CorgiShop.Repo;
+using CorgiShop.Domain;
 using CorgiShop.DataGen;
 
 namespace CorgiShop.Api
@@ -77,7 +77,7 @@ namespace CorgiShop.Api
 
             RegisterLibServices(builder.Services);
             builder.Services.AddMediatR(typeof(Program).Assembly);
-            builder.Services.AddMediatR(typeof(BizIocHelper).Assembly);
+            builder.Services.AddMediatR(typeof(ApplicationIocHelper).Assembly);
 
             var app = builder.Build();
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
@@ -102,8 +102,8 @@ namespace CorgiShop.Api
         {
             var iocHelpers = new List<IIocHelper>
             {
-                new BizIocHelper(),
-                new RepoIocHelper(),
+                new ApplicationIocHelper(),
+                new DomainIocHelper(),
                 new DataGenIocHelper()
             };
 

@@ -5,17 +5,17 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop.Api", "CorgiShop.Api\CorgiShop.Api.csproj", "{2B0BD489-9D22-4821-B816-BAE4FEEDA352}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop.App", "CorgiShop.App\CorgiShop.App.csproj", "{BE9310C9-E90C-4160-A600-BAF1E0DEAF40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop", "CorgiShop\CorgiShop.csproj", "{BE9310C9-E90C-4160-A600-BAF1E0DEAF40}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop.Biz", "CorgiShop.Cqrs\CorgiShop.Biz.csproj", "{0DDFC0F6-4FAE-4BFB-84F8-684B657740BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop.Application", "CorgiShop.Application\CorgiShop.Application.csproj", "{0DDFC0F6-4FAE-4BFB-84F8-684B657740BB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop.Repo", "CorgiShop.Repo\CorgiShop.Repo.csproj", "{4FDE2982-5E7D-45F0-AA40-1D5A69130B75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop.Domain", "CorgiShop.Domain\CorgiShop.Domain.csproj", "{4FDE2982-5E7D-45F0-AA40-1D5A69130B75}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop.Common", "CorgiShop.Common\CorgiShop.Common.csproj", "{72E23511-5E4A-4B8D-88DF-DBA5247740E5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop.Tests", "CorgiShop.Tests\CorgiShop.Tests.csproj", "{49AAA1E3-6A0D-4989-B282-D5645FCFAEFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorgiShop.DataGen", "CorgiShop.DataGen\CorgiShop.DataGen.csproj", "{903FE3BA-7CA3-4C62-AAA6-21100EFDFFF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorgiShop.DataGen", "CorgiShop.DataGen\CorgiShop.DataGen.csproj", "{903FE3BA-7CA3-4C62-AAA6-21100EFDFFF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
