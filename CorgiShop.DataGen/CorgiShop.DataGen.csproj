@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CorgiShop.Common\CorgiShop.Common.csproj" />
-    <ProjectReference Include="..\CorgiShop.Repo\CorgiShop.Repo.csproj" />
+    <ProjectReference Include="..\CorgiShop.Domain\CorgiShop.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using CorgiShop.Repo.Model;
+﻿using CorgiShop.Domain.Model;
 
 namespace CorgiShop.DataGen.Services;
 

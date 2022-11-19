@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Biz.Requests.Products
+namespace CorgiShop.Application.Requests.Products
 {
     public record ProductDto(int ProductId, string Name, string Description, decimal Price, int Stock);
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Biz.Requests.Products
+namespace CorgiShop.Application.Requests.Products
 {
     public  record DeleteProductCommand(int ProductId) : IRequest;
 }

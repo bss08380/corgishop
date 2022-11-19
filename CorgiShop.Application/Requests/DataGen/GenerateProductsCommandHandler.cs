@@ -1,5 +1,5 @@
 ﻿using CorgiShop.DataGen.Services;
-using CorgiShop.Repo.Model;
+using CorgiShop.Domain.Model;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Biz.Requests.DataGen
+namespace CorgiShop.Application.Requests.DataGen
 {
     public class GenerateProductsCommandHandler : IRequestHandler<GenerateProductsCommand>
     {

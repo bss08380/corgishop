@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Repo.Model
+namespace CorgiShop.Domain.Model
 {
     public class CorgiShopDbContext : DbContext
     {

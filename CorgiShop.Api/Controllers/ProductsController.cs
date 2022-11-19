@@ -1,6 +1,6 @@
-﻿using CorgiShop.Biz.Requests.DataGen;
-using CorgiShop.Biz.Requests.Products;
-using CorgiShop.Repo.Model;
+﻿using CorgiShop.Application.Requests.DataGen;
+using CorgiShop.Application.Requests.Products;
+using CorgiShop.Domain.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;

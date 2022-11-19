@@ -1,7 +1,7 @@
-﻿using CorgiShop.Repo;
+﻿using CorgiShop.Domain;
 using MediatR;
 
-namespace CorgiShop.Biz.Requests.Products
+namespace CorgiShop.Application.Requests.Products
 {
     public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand>
     {

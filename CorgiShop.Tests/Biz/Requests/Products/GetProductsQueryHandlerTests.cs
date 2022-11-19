@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using CorgiShop.Biz.Requests.Products;
-using CorgiShop.Repo;
-using CorgiShop.Repo.Model;
+using CorgiShop.Application.Requests.Products;
+using CorgiShop.Domain;
+using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
 using Moq;
 

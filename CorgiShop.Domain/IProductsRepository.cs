@@ -1,11 +1,11 @@
-﻿using CorgiShop.Repo.Model;
+﻿using CorgiShop.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Repo
+namespace CorgiShop.Domain
 {
     public interface IProductsRepository
     {

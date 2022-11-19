@@ -1,4 +1,4 @@
-﻿using CorgiShop.Biz.Requests.Base;
+﻿using CorgiShop.Application.Requests.Base;
 
 namespace CorgiShop.Tests.Biz.Requests.Base;
 

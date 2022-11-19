@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using CorgiShop.Repo;
-using CorgiShop.Repo.Model;
+using CorgiShop.Domain;
+using CorgiShop.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 

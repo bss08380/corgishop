@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Repo
+namespace CorgiShop.Application
 {
-    public class RepoIocHelper : IIocHelper
+    public class BizIocHelper : IIocHelper
     {
         public void RegisterServices(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddTransient<IProductsRepository, ProductsRepository>();
+            serviceCollection.AddAutoMapper(typeof(BizIocHelper).Assembly);
         }
     }
 }

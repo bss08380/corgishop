@@ -1,4 +1,4 @@
-﻿namespace CorgiShop.Biz.Requests.Base
+﻿namespace CorgiShop.Application.Requests.Base
 {
     public abstract record PaginatedResultsDto<T>
     {

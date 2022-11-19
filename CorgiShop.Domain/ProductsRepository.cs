@@ -1,7 +1,7 @@
-﻿using CorgiShop.Repo.Model;
+﻿using CorgiShop.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace CorgiShop.Repo;
+namespace CorgiShop.Domain;
 
 public class ProductsRepository : IProductsRepository
 {

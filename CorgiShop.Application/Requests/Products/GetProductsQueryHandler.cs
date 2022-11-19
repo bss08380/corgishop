@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using CorgiShop.Biz.Requests.Base;
-using CorgiShop.Repo;
-using CorgiShop.Repo.Model;
+using CorgiShop.Application.Requests.Base;
+using CorgiShop.Domain;
+using CorgiShop.Domain.Model;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Biz.Requests.Products;
+namespace CorgiShop.Application.Requests.Products;
 
 public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, GetProductsDto>
 {

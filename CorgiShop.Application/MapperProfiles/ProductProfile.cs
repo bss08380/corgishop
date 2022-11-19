@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using CorgiShop.Biz.Requests.Products;
-using CorgiShop.Repo.Model;
+using CorgiShop.Application.Requests.Products;
+using CorgiShop.Domain.Model;
 
-namespace CorgiShop.Biz.MapperProfiles
+namespace CorgiShop.Application.MapperProfiles
 {
     public class ProductProfile : Profile
     {

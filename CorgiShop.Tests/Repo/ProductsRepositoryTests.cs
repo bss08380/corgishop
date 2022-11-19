@@ -1,5 +1,5 @@
-﻿using CorgiShop.Repo;
-using CorgiShop.Repo.Model;
+﻿using CorgiShop.Domain;
+using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
 using System.Security.Cryptography;
 
