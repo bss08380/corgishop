@@ -77,7 +77,7 @@ namespace CorgiShop.Api
 
             RegisterLibServices(builder.Services);
             builder.Services.AddMediatR(typeof(Program).Assembly);
-            builder.Services.AddMediatR(typeof(BizIocHelper).Assembly);
+            builder.Services.AddMediatR(typeof(ApplicationIocHelper).Assembly);
 
             var app = builder.Build();
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
@@ -102,8 +102,8 @@ namespace CorgiShop.Api
         {
             var iocHelpers = new List<IIocHelper>
             {
-                new BizIocHelper(),
-                new RepoIocHelper(),
+                new ApplicationIocHelper(),
+                new DomainIocHelper(),
                 new DataGenIocHelper()
             };
 

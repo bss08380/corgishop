@@ -1,6 +1,6 @@
 ﻿using CorgiShop.Application.Requests.Base;
 
-namespace CorgiShop.Tests.Biz.Requests.Base;
+namespace CorgiShop.Tests.Application.Requests.Base;
 
 public class QueryPageDtoTests
 {

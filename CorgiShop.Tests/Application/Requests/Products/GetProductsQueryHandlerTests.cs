@@ -5,7 +5,7 @@ using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
 using Moq;
 
-namespace CorgiShop.Tests.Biz.Requests.Products;
+namespace CorgiShop.Tests.Application.Requests.Products;
 
 public class GetProductsQueryHandlerTests : TestBase
 {

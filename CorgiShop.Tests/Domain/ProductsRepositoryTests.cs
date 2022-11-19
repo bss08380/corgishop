@@ -3,7 +3,7 @@ using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
 using System.Security.Cryptography;
 
-namespace CorgiShop.Tests.Repo
+namespace CorgiShop.Tests.Domain
 {
     public class ProductsRepositoryTests : TestBase
     {
