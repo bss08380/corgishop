@@ -1,4 +1,6 @@
-﻿using CorgiShop.Biz.Requests.Products;
+﻿using CorgiShop.Biz.Requests.DataGen;
+using CorgiShop.Biz.Requests.Products;
+using CorgiShop.Repo.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
@@ -14,6 +16,13 @@ public class ProductsController : Controller
     public ProductsController(ISender sender)
     {
         _mediator = sender;
+    }
+
+    [HttpPost("generate")]
+    public async Task<ActionResult> Generate([FromQuery] GenerateProductsCommand command)
+    {
+        await _mediator.Send(command);
+        return Ok();
     }
 
     [HttpGet]

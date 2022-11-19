@@ -10,10 +10,12 @@ using Microsoft.EntityFrameworkCore;
 using MediatR;
 using CorgiShop.Biz.Requests.Products;
 using CorgiShop.Biz;
-using CorgiShop.Common.Ioc;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.AspNetCore.Hosting.StaticWebAssets;
 using CorgiShop.Api.Infrastructure;
+using CorgiShop.Common.Ioc;
+using CorgiShop.Repo;
+using CorgiShop.DataGen;
 
 namespace CorgiShop.Api
 {
@@ -98,11 +100,13 @@ namespace CorgiShop.Api
 
         private static void RegisterLibServices(IServiceCollection serviceCollection)
         {
-            var iocHelperInt = typeof(IIocHelper);
-            var iocHelpers = AppDomain.CurrentDomain.GetAssemblies()
-                .SelectMany(s => s.GetTypes())
-                .Where(p => iocHelperInt.IsAssignableFrom(p) && !p.IsInterface)
-                .Select(t => Activator.CreateInstance(t) as IIocHelper);
+            var iocHelpers = new List<IIocHelper>
+            {
+                new BizIocHelper(),
+                new RepoIocHelper(),
+                new DataGenIocHelper()
+            };
+
             foreach (var helper in iocHelpers)
             {
                 helper?.RegisterServices(serviceCollection);
