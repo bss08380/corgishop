@@ -1,10 +1,11 @@
-﻿using System.Text.Json;
+﻿using System.Net;
+using System.Text.Json;
 
 namespace CorgiShop.Common.Model;
 
 public record ErrorDetails
 {
-    public required int StatusCode { get; set; }
+    public required HttpStatusCode StatusCode { get; set; }
     public required string Details { get; set; }
 
     public override string ToString()

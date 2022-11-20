@@ -1,4 +1,5 @@
-﻿using CorgiShop.Domain;
+﻿using CorgiShop.Common.Exceptions;
+using CorgiShop.Domain;
 using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
 using System.Security.Cryptography;
@@ -108,7 +109,7 @@ namespace CorgiShop.Tests.Domain
             //Act
             var action = async () => await uut.Delete(0); //0 is never assigned by EF
             //Assert
-            await Assert.ThrowsAsync<InvalidOperationException>(action);
+            await Assert.ThrowsAsync<DetailedException>(action);
         }
 
         private async Task<IProductsRepository> GetUut(int productCnt, int deletedCnt)
