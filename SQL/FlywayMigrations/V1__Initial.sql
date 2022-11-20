@@ -12,20 +12,18 @@ Note on security
 */
 
 --Products table
-if object_id('Products', 'U') is not null
+if object_id('Products', 'U') is null
 begin
-	drop table Products;
+	create table Products
+	(
+		ProductId int not null primary key identity(1,1),
+		Name nvarchar(128) not null,
+		Description nvarchar(128) not null,
+		Price decimal not null default(0.0),
+		Stock int not null default(0),
+		IsDeleted bit not null default(0)
+	);
 end
-
-create table Products
-(
-	ProductId int not null primary key identity(1,1),
-	Name nvarchar(128) not null,
-	Description nvarchar(128) not null,
-	Price decimal not null default(0.0),
-	Stock int not null default(0),
-	IsDeleted bit not null default(0)
-);
 
 --Bogus products data for initial testing
 insert into Products (Name, Description, Price, Stock) values ('Pembroke Plushy', 'An adorable Pembroke Welsh Corgi plush!', 30.0, 5);

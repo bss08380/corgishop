@@ -54,7 +54,7 @@ public class GetProductsQueryHandlerTests : TestBase
     private Mock<IMapper> RigMockedMapper()
     {
         var mockedMapper = new Mock<IMapper>();
-        mockedMapper.Setup(m => m.Map<Product, ProductDto>(It.IsAny<Product>())).Returns(new ProductDto(0, "", "", 0.0M, 0)).Verifiable();
+        mockedMapper.Setup(m => m.Map<Product, ProductDto>(It.IsAny<Product>())).Returns(new ProductDto(0, "", "", 0.0M, 0));
         return mockedMapper;
     }
 
@@ -69,17 +69,10 @@ public class GetProductsQueryHandlerTests : TestBase
                 new Product()
             };
         var mockedRepo = new Mock<IProductsRepository>();
-        mockedRepo.Setup(r => r.GetPaginated(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(productList.Take(3)).Verifiable();
-        mockedRepo.Setup(r => r.GetTotalAvailable()).ReturnsAsync(productList.Count()).Verifiable();
+        mockedRepo.Setup(r => r.GetPaginated(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(productList.Take(3));
+        mockedRepo.Setup(r => r.GetTotalAvailable()).ReturnsAsync(productList.Count());
         return mockedRepo;
     }
 
-    private GetProductsQuery GetRequestQuery(int limit, int offset)
-    {
-        return new GetProductsQuery()
-        {
-            Limit = limit,
-            Offset = offset
-        };
-    }
+    private GetProductsQuery GetRequestQuery(int limit, int offset) => new GetProductsQuery() { Limit = limit, Offset = offset };
 }

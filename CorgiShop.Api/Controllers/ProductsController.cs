@@ -1,9 +1,6 @@
-﻿using CorgiShop.Application.Requests.DataGen;
-using CorgiShop.Application.Requests.Products;
-using CorgiShop.Domain.Model;
+﻿using CorgiShop.Application.Requests.Products;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace CorgiShop.Api.Controllers;
 
@@ -18,20 +15,20 @@ public class ProductsController : Controller
         _mediator = sender;
     }
 
-    [HttpPost("generate")]
-    public async Task<ActionResult> Generate([FromQuery] GenerateProductsCommand command)
+    [HttpGet]
+    public async Task<ActionResult> Get([FromQuery] GetProductsQuery query) => Ok(await _mediator.Send(query));
+
+    [HttpDelete("{productId}")]
+    public async Task<ActionResult> Delete([FromQuery] DeleteProductCommand command)
     {
         await _mediator.Send(command);
         return Ok();
     }
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<ProductDto>>> Index([FromQuery] GetProductsQuery query) => Ok(await _mediator.Send(query));
-
-    [HttpDelete("{productId}")]
-    public async Task<ActionResult> Delete(int productId)
+    [HttpPost("generate")]
+    public async Task<ActionResult> Generate([FromQuery] GenerateProductsCommand command)
     {
-        await _mediator.Send(new DeleteProductCommand(productId));
+        await _mediator.Send(command);
         return Ok();
     }
 }
