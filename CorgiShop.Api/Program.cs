@@ -16,6 +16,7 @@ using CorgiShop.Api.Infrastructure;
 using CorgiShop.Common.Ioc;
 using CorgiShop.Domain;
 using CorgiShop.DataGen;
+using NLog.Extensions.Logging;
 
 namespace CorgiShop.Api
 {
@@ -36,6 +37,15 @@ namespace CorgiShop.Api
              * which deployment configuration I load
              */
             builder.AddDeploymentConfiguration();
+
+            /*
+             * NLog is used for logging in this project
+             * See the nlog.config XML file for details
+             * 
+             * Currently logs are written out to the database Logs table via a proc (all in the migration scripts)
+             */
+            builder.Logging.ClearProviders();
+            builder.Logging.AddNLog();
 
             builder.Services.AddControllers();
 
@@ -87,6 +97,7 @@ namespace CorgiShop.Api
                 app.UseWebAssemblyDebugging();
             }
 
+            app.ConfigureExceptionHandler();
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();

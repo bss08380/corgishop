@@ -2,8 +2,11 @@
 
 namespace CorgiShop.Common.Model;
 
-public record ErrorDetails(int StatusCode, string Details)
+public record ErrorDetails
 {
+    public required int StatusCode { get; set; }
+    public required string Details { get; set; }
+
     public override string ToString()
     {
         /*
