@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Application.Requests.DataGen
+namespace CorgiShop.Application.Requests.Products
 {
     public class GenerateProductsCommandHandler : IRequestHandler<GenerateProductsCommand>
     {

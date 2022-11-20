@@ -25,7 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CorgiShop.Api\CorgiShop.Api.csproj" />
     <ProjectReference Include="..\CorgiShop.Application\CorgiShop.Application.csproj" />
+    <ProjectReference Include="..\CorgiShop.Common\CorgiShop.Common.csproj" />
+    <ProjectReference Include="..\CorgiShop.DataGen\CorgiShop.DataGen.csproj" />
     <ProjectReference Include="..\CorgiShop.Domain\CorgiShop.Domain.csproj" />
   </ItemGroup>
 
