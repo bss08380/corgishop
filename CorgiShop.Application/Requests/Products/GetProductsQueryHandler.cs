@@ -1,19 +1,15 @@
 ﻿using AutoMapper;
 using CorgiShop.Application.Requests.Base;
+using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
 using CorgiShop.Domain.Model;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CorgiShop.Application.Requests.Products;
 
 public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, GetProductsDto>
 {
-    private const int MAX_PAGE_SIZE = 100;
+    private const int MAX_PAGE_SIZE = 200;
 
     private readonly IProductsRepository _corgiShopRepo;
     private readonly IMapper _mapper;
@@ -28,16 +24,14 @@ public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, GetProd
 
     public async Task<GetProductsDto> Handle(GetProductsQuery request, CancellationToken cancellationToken)
     {
-        //Quasi-auto-correct of page size if something sends huge limit to API
-        //Db protections are also in place further down
-        int clampedPageSize = Math.Min(request.Limit, MAX_PAGE_SIZE);
+        if (request.Limit > MAX_PAGE_SIZE) throw DetailedException.FromFailedVerification(nameof(request.Limit), $"Maximum limit size is {MAX_PAGE_SIZE}");
 
         int total = await _corgiShopRepo.GetTotalAvailable();
-        var results = (await _corgiShopRepo.GetPaginated(clampedPageSize, request.Offset)).Select(p => _mapper.Map<Product, ProductDto>(p));
+        var results = (await _corgiShopRepo.GetPaginated(request.Limit, request.Offset)).Select(p => _mapper.Map<Product, ProductDto>(p));
 
         return new GetProductsDto()
         {
-            Page = QueryPageDto.FromCurrentPage(total, clampedPageSize, request.Offset),
+            Page = QueryPageDto.FromCurrentPage(total, request.Limit, request.Offset),
             TotalAvailable = total,
             TotalReturned = results?.Count() ?? 0,
             Results = results

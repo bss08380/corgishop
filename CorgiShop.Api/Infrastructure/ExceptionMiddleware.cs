@@ -1,5 +1,5 @@
-﻿using CorgiShop.Common.Model;
-using System.Net;
+﻿using CorgiShop.Common.Exceptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace CorgiShop.Api.Infrastructure;
 
@@ -23,22 +23,28 @@ public class ExceptionMiddleware
         /*
          * Catch specific exception types here as needed
          */
-        catch (Exception ex)
+        catch (DbUpdateException ex)
+        {
+            LogError(ex);
+            await HandleExceptionAsync(httpContext, DetailedException.FromDatabaseUpdateError(ex));
+        }
+        catch (DetailedException ex)
         {
             LogError(ex);
             await HandleExceptionAsync(httpContext, ex);
         }
+        catch (Exception ex)
+        {
+            LogError(ex);
+            await HandleExceptionAsync(httpContext, DetailedException.FromUnknownError(ex));
+        }
     }
 
-    private async Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private async Task HandleExceptionAsync(HttpContext context, DetailedException exception)
     {
         context.Response.ContentType = "application/json";
-        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-        await context.Response.WriteAsync(new ErrorDetails()
-        {
-            StatusCode = context.Response.StatusCode,
-            Details = exception.Message ?? "Unknown error"
-        }.ToString());
+        context.Response.StatusCode = (int)exception.Details.StatusCode;
+        await context.Response.WriteAsync(exception.Details.ToString());
     }
 
     private void LogError(Exception ex, string? msg = null) => _logger.LogError(msg ?? $"Exception Middleware: {ex.Message}", ex);

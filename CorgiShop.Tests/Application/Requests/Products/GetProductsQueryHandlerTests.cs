@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CorgiShop.Application.Requests.Products;
+using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
 using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
@@ -38,15 +39,13 @@ public class GetProductsQueryHandlerTests : TestBase
     }
 
     [Fact]
-    public async Task Handle_PageSizeLimit()
+    public async Task Handle_PageSizeLimitException()
     {
         //Arrange
         var uut = GetUut();
         var query = GetRequestQuery(500, 1);
-        //Act
-        var response = await uut.Handle(query, CancellationToken.None);
-        //Assert
-        Assert.Equal(100, response.Page.CurrentLimit);
+        //Act, Assert
+        await Assert.ThrowsAsync<DetailedException>(async () => await uut.Handle(query, CancellationToken.None));
     }
 
     private GetProductsQueryHandler GetUut() => new GetProductsQueryHandler(_mockedRepo.Object, _mockedMapper.Object);
