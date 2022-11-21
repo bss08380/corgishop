@@ -17,6 +17,8 @@ using CorgiShop.Common.Ioc;
 using CorgiShop.Domain;
 using CorgiShop.DataGen;
 using NLog.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 namespace CorgiShop.Api
 {
@@ -48,6 +50,19 @@ namespace CorgiShop.Api
             builder.Logging.AddNLog();
 
             builder.Services.AddControllers();
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo 
+                { 
+                    Title = "CorgiShop API", 
+                    Version = "v1",
+                    Description = "A fantastically simple, utterly fake, and undeniably CORGI online shopping API used for learning, testing design paradigms, and general professional development"
+                });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+            });
 
             //OpenId Connect Auth via Auth0 (for demo)
             //See Auth.txt in root directory for info
@@ -97,6 +112,8 @@ namespace CorgiShop.Api
                 app.UseWebAssemblyDebugging();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI();
             app.ConfigureExceptionHandler();
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();

@@ -1,4 +1,5 @@
 ﻿using CorgiShop.Application.Requests.Products;
+using CorgiShop.Common.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,6 +7,7 @@ namespace CorgiShop.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Produces("application/json")]
 public class ProductsController : Controller
 {
     private readonly ISender _mediator;
@@ -15,19 +17,48 @@ public class ProductsController : Controller
         _mediator = sender;
     }
 
+    /// <summary>
+    /// Gets products (paginated) which are available in the CorgiShop
+    /// </summary>
+    /// <param name="limit">The page size/limit</param>
+    /// <param name="offset">Command parameters, notably the number of products to generate</param>
+    /// <returns>Paginated product data, including page information</returns>
+    /// <response code="200">Returns the product data and pagination details</response>
     [HttpGet]
-    public async Task<ActionResult> Get([FromQuery] GetProductsQuery query) => Ok(await _mediator.Send(query));
-
-    [HttpDelete("{productId}")]
-    public async Task<ActionResult> Delete([FromQuery] DeleteProductCommand command)
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult> Get([FromQuery] int limit = 10, [FromQuery] int offset = 0)
     {
+        var query = new GetProductsQuery(limit, offset);
+        return Ok(await _mediator.Send(query));
+    }
+
+    /// <summary>
+    /// Deletes a product which is available in the CorgiShop
+    /// </summary>
+    /// <param name="productId">The ID of the product to be deleted</param>
+    /// <response code="200">If the deletion was successful</response>
+    /// <response code="400">If the provided ProductID is not found in the database</response>
+    [HttpDelete("{productId}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorDetails))]
+    public async Task<ActionResult> Delete([FromRoute] int productId)
+    {
+        var command = new DeleteProductCommand(productId);
         await _mediator.Send(command);
         return Ok();
     }
 
+    /// <summary>
+    /// Generates the provided number of fake corgi-themed products to be added for sale in the CorgiShop
+    /// </summary>
+    /// <param name="numberToGenerate">The number of fake products to generate</param>
+    /// <returns>Paginated product data, including page information</returns>
+    /// <response code="200">If the generation operation completed successfully</response>
     [HttpPost("generate")]
-    public async Task<ActionResult> Generate([FromQuery] GenerateProductsCommand command)
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult> Generate([FromQuery] int numberToGenerate = 100)
     {
+        var command = new GenerateProductsCommand(numberToGenerate);
         await _mediator.Send(command);
         return Ok();
     }

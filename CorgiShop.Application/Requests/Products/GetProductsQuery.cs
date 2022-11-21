@@ -1,11 +1,6 @@
 ﻿using MediatR;
+using System.ComponentModel.DataAnnotations;
 
 namespace CorgiShop.Application.Requests.Products;
 
-public class GetProductsQuery : IRequest<GetProductsDto>
-{
-    public int Limit { get; set; }
-    public int Offset { get; set; }
-
-    public string Filter { get; set; } = string.Empty;
-}
+public record GetProductsQuery(int Limit, int Offset) : IRequest<GetProductsDto>;
