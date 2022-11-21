@@ -1,8 +1,8 @@
-﻿using CorgiShop.Application.Requests.Products;
-using CorgiShop.DataGen.Services;
+﻿using CorgiShop.DataGen.Services;
 using CorgiShop.Tests.Base;
 using MediatR;
 using Moq;
+using CorgiShop.Application.Features.Products.Commands.GenerateProducts;
 
 namespace CorgiShop.Tests.Application.Requests.Products;
 
@@ -15,7 +15,7 @@ public class GenerateProductsCommandHandlerTests : TestBase, IAsyncLifetime
     {
         //Arrange
         var cmd = GetGenerateCommand(10);
-        var uut = await GetUut();
+        var uut = GetUut();
         //Act
         var unitValue = await uut.Handle(cmd, CancellationToken.None);
         //Assert
@@ -23,7 +23,7 @@ public class GenerateProductsCommandHandlerTests : TestBase, IAsyncLifetime
         _mockedProductDataGenService.VerifyAll();
     }
 
-    private async Task<GenerateProductsCommandHandler> GetUut() => new GenerateProductsCommandHandler(DbContext!, _mockedProductDataGenService.Object);
+    private GenerateProductsCommandHandler GetUut() => new GenerateProductsCommandHandler(DbContext!, _mockedProductDataGenService.Object);
 
     private GenerateProductsCommand GetGenerateCommand(int cnt) => new GenerateProductsCommand(cnt);
 

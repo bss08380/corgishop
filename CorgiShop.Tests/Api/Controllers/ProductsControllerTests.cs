@@ -1,6 +1,8 @@
 ﻿using CorgiShop.Api.Controllers;
-using CorgiShop.Application.Requests.Base;
-using CorgiShop.Application.Requests.Products;
+using CorgiShop.Application.CQRS.Base;
+using CorgiShop.Application.Features.Products.Commands.DeleteProduct;
+using CorgiShop.Application.Features.Products.Commands.GenerateProducts;
+using CorgiShop.Application.Features.Products.Queries.GetProducts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -31,7 +33,7 @@ public class ProductsControllerTests
     {
         //Arrange
         var uut = GetUut();
-        var query = new GetProductsQuery();
+        var query = new GetProductsQuery(0, 0);
         //Act
         var actionResult = await uut.Get(query);
         var okResult = actionResult as OkObjectResult;

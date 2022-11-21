@@ -5,10 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Common.Ioc
+namespace CorgiShop.Common.Ioc;
+
+public interface IIocHelper
 {
-    public interface IIocHelper
-    {
-        void RegisterServices(IServiceCollection serviceCollection);
-    }
+    void RegisterServices(IServiceCollection serviceCollection);
 }

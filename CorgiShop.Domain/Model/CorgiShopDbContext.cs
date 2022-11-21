@@ -6,15 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Domain.Model
-{
-    public class CorgiShopDbContext : DbContext
-    {
-        public DbSet<Product> Products { get; set; }
+namespace CorgiShop.Domain.Model;
 
-        public CorgiShopDbContext(DbContextOptions<CorgiShopDbContext> options)
-            : base(options)
-        {
-        }
+public class CorgiShopDbContext : DbContext
+{
+    public DbSet<Product> Products { get; set; }
+
+    public CorgiShopDbContext(DbContextOptions<CorgiShopDbContext> options)
+        : base(options)
+    {
     }
 }

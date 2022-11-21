@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CorgiShop.Application.Requests.Products;
+using CorgiShop.Application.Features.Products.Queries.GetProducts;
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
 using CorgiShop.Domain.Model;
@@ -73,5 +73,5 @@ public class GetProductsQueryHandlerTests : TestBase
         return mockedRepo;
     }
 
-    private GetProductsQuery GetRequestQuery(int limit, int offset) => new GetProductsQuery() { Limit = limit, Offset = offset };
+    private GetProductsQuery GetRequestQuery(int limit, int offset) => new GetProductsQuery(limit, offset);
 }

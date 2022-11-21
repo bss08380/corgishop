@@ -1,22 +1,21 @@
-﻿namespace CorgiShop.Api.Infrastructure
-{
-    public enum DeploymentConfigType
-    {
-        LocalDev,
-        LocalDocker
-    }
+﻿namespace CorgiShop.Api.Infrastructure;
 
-    public static class DeploymentConfig
+public enum DeploymentConfigType
+{
+    LocalDev,
+    LocalDocker
+}
+
+public static class DeploymentConfig
+{
+    public static DeploymentConfigType Configuration
     {
-        public static DeploymentConfigType Configuration
+        get
         {
-            get
-            {
 #if LOCALDOCKER
-            return DeploymentConfigType.LocalDocker;
+        return DeploymentConfigType.LocalDocker;
 #endif
-                return DeploymentConfigType.LocalDev;
-            }
+            return DeploymentConfigType.LocalDev;
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using MediatR;
-using System.ComponentModel.DataAnnotations;
 
-namespace CorgiShop.Application.Requests.Products;
+namespace CorgiShop.Application.Features.Products.Queries.GetProducts;
 
 public record GetProductsQuery(int Limit, int Offset) : IRequest<GetProductsDto>;

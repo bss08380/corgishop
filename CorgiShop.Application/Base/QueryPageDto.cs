@@ -1,4 +1,4 @@
-﻿namespace CorgiShop.Application.Requests.Base;
+﻿namespace CorgiShop.Application.CQRS.Base;
 
 public record QueryPageDto
 {

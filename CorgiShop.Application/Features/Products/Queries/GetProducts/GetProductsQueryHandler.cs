@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using CorgiShop.Application.Requests.Base;
+using CorgiShop.Application.CQRS.Base;
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
 using CorgiShop.Domain.Model;
 using MediatR;
 
-namespace CorgiShop.Application.Requests.Products;
+namespace CorgiShop.Application.Features.Products.Queries.GetProducts;
 
 public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, GetProductsDto>
 {
