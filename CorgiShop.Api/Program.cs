@@ -13,6 +13,7 @@ using CorgiShop.DataGen;
 using NLog.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using CorgiShop.Common.Settings;
 
 namespace CorgiShop.Api;
 
@@ -42,6 +43,10 @@ public class Program
          */
         builder.Logging.ClearProviders();
         builder.Logging.AddNLog();
+
+        //builder.Services.AddDistributedMemoryCache();
+        builder.Services.AddStackExchangeRedisCache(options => { options.Configuration = builder.Configuration.GetConnectionString("Redis"); });
+        builder.Services.Configure<CacheSettings>(builder.Configuration.GetSection("CacheSettings"));
 
         builder.Services.AddControllers();
         builder.Services.AddSwaggerGen(c =>

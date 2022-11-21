@@ -73,5 +73,5 @@ public class GetProductsQueryHandlerTests : TestBase
         return mockedRepo;
     }
 
-    private GetProductsQuery GetRequestQuery(int limit, int offset) => new GetProductsQuery(limit, offset);
+    private GetProductsQuery GetRequestQuery(int limit, int offset) => new GetProductsQuery() { Limit = limit, Offset = offset };
 }

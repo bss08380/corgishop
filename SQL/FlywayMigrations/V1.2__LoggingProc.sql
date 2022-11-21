@@ -33,5 +33,3 @@ begin
     @exception
   );
 end
-
-GRANT EXEC ON dbo.AddLogEntry TO svc_corgi_api;

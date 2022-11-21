@@ -2,5 +2,8 @@
   "OpenIdConnect": {
     "Authority": "https://dev-i1iklgckj03sp4hv.us.auth0.com",
     "Audience": "https://corgishop.com/api"
+  },
+  "CacheSettings": {
+    "MinutesToLive": 5
   }
 }

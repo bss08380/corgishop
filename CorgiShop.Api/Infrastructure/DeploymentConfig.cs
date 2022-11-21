@@ -12,7 +12,7 @@ public static class DeploymentConfig
     {
         get
         {
-#if LOCALDOCKER
+#if LocalDocker
         return DeploymentConfigType.LocalDocker;
 #endif
             return DeploymentConfigType.LocalDev;

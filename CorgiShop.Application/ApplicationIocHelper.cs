@@ -17,5 +17,6 @@ public class ApplicationIocHelper : IIocHelper
         serviceCollection.AddAutoMapper(typeof(ApplicationIocHelper).Assembly);
         serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
         serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+        serviceCollection.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
     }
 }

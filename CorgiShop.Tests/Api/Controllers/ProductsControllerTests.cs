@@ -33,7 +33,7 @@ public class ProductsControllerTests
     {
         //Arrange
         var uut = GetUut();
-        var query = new GetProductsQuery(0, 0);
+        var query = new GetProductsQuery() { Limit = 0, Offset = 0 };
         //Act
         var actionResult = await uut.Get(query);
         var okResult = actionResult as OkObjectResult;
