@@ -1,0 +1,498 @@
+2022-11-21 15:36:48.9488 Info Message Template Auto Format enabled
+2022-11-21 15:36:48.9540 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-21 15:36:49.0310 Debug ScanAssembly('NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-11-21 15:36:49.0844 Debug Setting 'NLog.Targets.DatabaseTarget.name' to 'db'
+2022-11-21 15:36:49.0844 Debug Setting 'NLog.Targets.DatabaseTarget.connectionString' to '${configsetting:item=ConnectionStrings.WebApiDatabase}'
+2022-11-21 15:36:49.0844 Debug Setting 'NLog.Targets.DatabaseTarget.dbProvider' to 'Microsoft.Data.SqlClient.SqlConnection, Microsoft.Data.SqlClient'
+2022-11-21 15:36:49.0844 Debug Setting 'NLog.Targets.DatabaseTarget.commandType' to 'StoredProcedure'
+2022-11-21 15:36:49.0844 Debug Setting 'NLog.Targets.DatabaseTarget.commandText' to '[dbo].[AddLogEntry]'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@machineName'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${machinename}'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@logged'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${date}'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@level'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${level}'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@message'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${message}'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@logger'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${logger}'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@properties'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${all-event-properties:separator=|}'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@callsite'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${callsite}'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@exception'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${exception:tostring}'
+2022-11-21 15:36:49.1121 Debug Setting 'NLog.LayoutRenderers.ExceptionLayoutRenderer.Format' to 'tostring'
+2022-11-21 15:36:49.1121 Info Adding target DatabaseTarget(Name=db)
+2022-11-21 15:36:49.1121 Debug Registered target db: NLog.Targets.DatabaseTarget
+2022-11-21 15:36:49.1277 Debug Watching file-filter 'NLog.config' in directory: C:\Users\brand\Desktop\CorgiShop\CorgiShop.Api\bin\Debug\net7.0
+2022-11-21 15:36:49.1277 Debug --- NLog configuration dump ---
+2022-11-21 15:36:49.1277 Debug Targets:
+2022-11-21 15:36:49.1277 Debug DatabaseTarget(Name=db)
+2022-11-21 15:36:49.1277 Debug Rules:
+2022-11-21 15:36:49.1277 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info ] writeTo: [ ]
+2022-11-21 15:36:49.1277 Debug logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] writeTo: [ db ]
+2022-11-21 15:36:49.1277 Debug --- End of NLog configuration dump ---
+2022-11-21 15:36:49.1277 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\brand\Desktop\CorgiShop\CorgiShop.Api\bin\Debug\net7.0\NLog.config
+2022-11-21 15:36:49.1277 Debug Unused target checking is started... Rule Count: 2, Target Count: 1
+2022-11-21 15:36:49.1277 Debug Unused target checking is completed. Total Rule Count: 2, Total Target Count: 1, Unused Target Count: 0
+2022-11-21 15:36:49.2239 Info Configuration initialized.
+2022-11-21 15:36:49.2239 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.0.5.1426. Product version: 5.0.5+ace23d89ecf3dc2675648414a1f01ee9c1b2383d. GlobalAssemblyCache: False
+2022-11-21 15:36:49.2239 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Hosting.Internal.ApplicationLifetime
+2022-11-21 15:36:49.2239 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Warn] => db
+2022-11-21 15:36:49.2239 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Error] => db
+2022-11-21 15:36:49.2239 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Fatal] => db
+2022-11-21 15:36:49.2239 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Hosting.Internal.Host
+2022-11-21 15:36:49.2239 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Warn] => db
+2022-11-21 15:36:49.2239 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Error] => db
+2022-11-21 15:36:49.2239 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Fatal] => db
+2022-11-21 15:36:49.2353 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Hosting.Lifetime
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.Hosting.Lifetime [Warn] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.Hosting.Lifetime [Error] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.Hosting.Lifetime [Fatal] => db
+2022-11-21 15:36:49.2353 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Warn] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Error] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Fatal] => db
+2022-11-21 15:36:49.2353 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Warn] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Error] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Fatal] => db
+2022-11-21 15:36:49.2353 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Warn] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Error] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Fatal] => db
+2022-11-21 15:36:49.2353 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.BadRequests
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Warn] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Error] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Fatal] => db
+2022-11-21 15:36:49.2353 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Connections
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Warn] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Error] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Fatal] => db
+2022-11-21 15:36:49.2353 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Http2
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Warn] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Error] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Fatal] => db
+2022-11-21 15:36:49.2353 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Http3
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Warn] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Error] => db
+2022-11-21 15:36:49.2353 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Fatal] => db
+2022-11-21 15:36:49.2583 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Api
+2022-11-21 15:36:49.2583 Debug Logger CorgiShop.Api [Trace] => db
+2022-11-21 15:36:49.2583 Debug Logger CorgiShop.Api [Debug] => db
+2022-11-21 15:36:49.2583 Debug Logger CorgiShop.Api [Info] => db
+2022-11-21 15:36:49.2583 Debug Logger CorgiShop.Api [Warn] => db
+2022-11-21 15:36:49.2583 Debug Logger CorgiShop.Api [Error] => db
+2022-11-21 15:36:49.2583 Debug Logger CorgiShop.Api [Fatal] => db
+2022-11-21 15:36:49.2689 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware
+2022-11-21 15:36:49.2689 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Warn] => db
+2022-11-21 15:36:49.2689 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Error] => db
+2022-11-21 15:36:49.2689 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Fatal] => db
+2022-11-21 15:36:49.2689 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter
+2022-11-21 15:36:49.2689 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Warn] => db
+2022-11-21 15:36:49.2689 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Error] => db
+2022-11-21 15:36:49.2689 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Fatal] => db
+2022-11-21 15:36:49.2873 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Warn] => db
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Error] => db
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Fatal] => db
+2022-11-21 15:36:49.2873 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Warn] => db
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Error] => db
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Fatal] => db
+2022-11-21 15:36:49.2873 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Warn] => db
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Error] => db
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Fatal] => db
+2022-11-21 15:36:49.2873 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Warn] => db
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Error] => db
+2022-11-21 15:36:49.2873 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Fatal] => db
+2022-11-21 15:36:49.3247 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.TypeForwardingActivator
+2022-11-21 15:36:49.3247 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Warn] => db
+2022-11-21 15:36:49.3247 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Error] => db
+2022-11-21 15:36:49.3247 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Fatal] => db
+2022-11-21 15:36:49.3300 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Warn] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Error] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Fatal] => db
+2022-11-21 15:36:49.3300 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Warn] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Error] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-21 15:36:49.3300 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Warn] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Error] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-21 15:36:49.3300 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Warn] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Error] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-21 15:36:49.3300 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Warn] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Error] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Fatal] => db
+2022-11-21 15:36:49.3300 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Warn] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Error] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Fatal] => db
+2022-11-21 15:36:49.3300 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Warn] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Error] => db
+2022-11-21 15:36:49.3300 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Fatal] => db
+2022-11-21 15:36:49.3447 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider
+2022-11-21 15:36:49.3447 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Warn] => db
+2022-11-21 15:36:49.3447 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Error] => db
+2022-11-21 15:36:49.3447 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Fatal] => db
+2022-11-21 15:36:49.3447 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService
+2022-11-21 15:36:49.3447 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Warn] => db
+2022-11-21 15:36:49.3447 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Error] => db
+2022-11-21 15:36:49.3447 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Fatal] => db
+2022-11-21 15:36:49.3447 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Hosting.Diagnostics
+2022-11-21 15:36:49.3447 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Warn] => db
+2022-11-21 15:36:49.3447 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Error] => db
+2022-11-21 15:36:49.3447 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Fatal] => db
+2022-11-21 15:36:49.3647 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor
+2022-11-21 15:36:49.3647 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Warn] => db
+2022-11-21 15:36:49.3647 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Error] => db
+2022-11-21 15:36:49.3647 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Fatal] => db
+2022-11-21 15:36:49.3814 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.EndpointMiddleware
+2022-11-21 15:36:49.3814 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Warn] => db
+2022-11-21 15:36:49.3814 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Error] => db
+2022-11-21 15:36:49.3814 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Fatal] => db
+2022-11-21 15:36:49.3814 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware
+2022-11-21 15:36:49.3814 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Warn] => db
+2022-11-21 15:36:49.3814 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Error] => db
+2022-11-21 15:36:49.3814 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Fatal] => db
+2022-11-21 15:36:49.3814 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Api.Infrastructure.ExceptionMiddleware
+2022-11-21 15:36:49.3814 Debug Logger CorgiShop.Api.Infrastructure.ExceptionMiddleware [Trace] => db
+2022-11-21 15:36:49.3814 Debug Logger CorgiShop.Api.Infrastructure.ExceptionMiddleware [Debug] => db
+2022-11-21 15:36:49.3814 Debug Logger CorgiShop.Api.Infrastructure.ExceptionMiddleware [Info] => db
+2022-11-21 15:36:49.3814 Debug Logger CorgiShop.Api.Infrastructure.ExceptionMiddleware [Warn] => db
+2022-11-21 15:36:49.3814 Debug Logger CorgiShop.Api.Infrastructure.ExceptionMiddleware [Error] => db
+2022-11-21 15:36:49.3814 Debug Logger CorgiShop.Api.Infrastructure.ExceptionMiddleware [Fatal] => db
+2022-11-21 15:36:49.3929 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Warn] => db
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Error] => db
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Fatal] => db
+2022-11-21 15:36:49.3929 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Warn] => db
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Error] => db
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Fatal] => db
+2022-11-21 15:36:49.3929 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Warn] => db
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Error] => db
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Fatal] => db
+2022-11-21 15:36:49.3929 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Warn] => db
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Error] => db
+2022-11-21 15:36:49.3929 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Fatal] => db
+2022-11-21 15:36:49.4380 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets
+2022-11-21 15:36:49.4383 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Warn] => db
+2022-11-21 15:36:49.4383 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Error] => db
+2022-11-21 15:36:49.4383 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Fatal] => db
+2022-11-21 15:36:49.7829 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.Matching.DfaMatcher
+2022-11-21 15:36:49.7829 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Warn] => db
+2022-11-21 15:36:49.7829 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Error] => db
+2022-11-21 15:36:49.7829 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Fatal] => db
+2022-11-21 15:36:49.8065 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler
+2022-11-21 15:36:49.8065 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Warn] => db
+2022-11-21 15:36:49.8065 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Error] => db
+2022-11-21 15:36:49.8065 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Fatal] => db
+2022-11-21 15:36:54.0158 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter
+2022-11-21 15:36:54.0163 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Warn] => db
+2022-11-21 15:36:54.0163 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Error] => db
+2022-11-21 15:36:54.0163 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Fatal] => db
+2022-11-21 15:36:54.0163 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter
+2022-11-21 15:36:54.0163 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Warn] => db
+2022-11-21 15:36:54.0163 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Error] => db
+2022-11-21 15:36:54.0163 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Fatal] => db
+2022-11-21 15:36:54.0381 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder
+2022-11-21 15:36:54.0381 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Warn] => db
+2022-11-21 15:36:54.0381 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Error] => db
+2022-11-21 15:36:54.0381 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Fatal] => db
+2022-11-21 15:36:54.0381 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder
+2022-11-21 15:36:54.0381 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Warn] => db
+2022-11-21 15:36:54.0381 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Error] => db
+2022-11-21 15:36:54.0381 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Fatal] => db
+2022-11-21 15:36:54.0529 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder
+2022-11-21 15:36:54.0529 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder [Warn] => db
+2022-11-21 15:36:54.0529 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder [Error] => db
+2022-11-21 15:36:54.0529 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder [Fatal] => db
+2022-11-21 15:36:54.0776 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Application.Middleware.LoggingBehavior
+2022-11-21 15:36:54.0776 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Trace] => db
+2022-11-21 15:36:54.0776 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Debug] => db
+2022-11-21 15:36:54.0776 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Info] => db
+2022-11-21 15:36:54.0776 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Warn] => db
+2022-11-21 15:36:54.0788 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Error] => db
+2022-11-21 15:36:54.0788 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Fatal] => db
+2022-11-21 15:36:54.0788 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Caching.Memory.MemoryCache
+2022-11-21 15:36:54.0788 Debug Logger Microsoft.Extensions.Caching.Memory.MemoryCache [Warn] => db
+2022-11-21 15:36:54.0788 Debug Logger Microsoft.Extensions.Caching.Memory.MemoryCache [Error] => db
+2022-11-21 15:36:54.0788 Debug Logger Microsoft.Extensions.Caching.Memory.MemoryCache [Fatal] => db
+2022-11-21 15:36:54.0788 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Application.Middleware.CachingBehavior
+2022-11-21 15:36:54.0788 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Trace] => db
+2022-11-21 15:36:54.0788 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Debug] => db
+2022-11-21 15:36:54.0788 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Info] => db
+2022-11-21 15:36:54.0788 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Warn] => db
+2022-11-21 15:36:54.0788 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Error] => db
+2022-11-21 15:36:54.0788 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Fatal] => db
+2022-11-21 15:36:54.3922 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:36:54.4242 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:36:54.6079 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Infrastructure
+2022-11-21 15:36:54.6079 Debug Logger Microsoft.EntityFrameworkCore.Infrastructure [Warn] => db
+2022-11-21 15:36:54.6079 Debug Logger Microsoft.EntityFrameworkCore.Infrastructure [Error] => db
+2022-11-21 15:36:54.6079 Debug Logger Microsoft.EntityFrameworkCore.Infrastructure [Fatal] => db
+2022-11-21 15:36:54.6720 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.ChangeTracking
+2022-11-21 15:36:54.6720 Debug Logger Microsoft.EntityFrameworkCore.ChangeTracking [Warn] => db
+2022-11-21 15:36:54.6720 Debug Logger Microsoft.EntityFrameworkCore.ChangeTracking [Error] => db
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.ChangeTracking [Fatal] => db
+2022-11-21 15:36:54.6728 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Database.Command
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Database.Command [Warn] => db
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Database.Command [Error] => db
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Database.Command [Fatal] => db
+2022-11-21 15:36:54.6728 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Query
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Query [Warn] => db
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Query [Error] => db
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Query [Fatal] => db
+2022-11-21 15:36:54.6728 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Database.Transaction
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Database.Transaction [Warn] => db
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Database.Transaction [Error] => db
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Database.Transaction [Fatal] => db
+2022-11-21 15:36:54.6728 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Database.Connection
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Database.Connection [Warn] => db
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Database.Connection [Error] => db
+2022-11-21 15:36:54.6728 Debug Logger Microsoft.EntityFrameworkCore.Database.Connection [Fatal] => db
+2022-11-21 15:36:54.6933 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Model
+2022-11-21 15:36:54.6933 Debug Logger Microsoft.EntityFrameworkCore.Model [Warn] => db
+2022-11-21 15:36:54.6933 Debug Logger Microsoft.EntityFrameworkCore.Model [Error] => db
+2022-11-21 15:36:54.6933 Debug Logger Microsoft.EntityFrameworkCore.Model [Fatal] => db
+2022-11-21 15:36:54.6933 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Model.Validation
+2022-11-21 15:36:54.6933 Debug Logger Microsoft.EntityFrameworkCore.Model.Validation [Warn] => db
+2022-11-21 15:36:54.6933 Debug Logger Microsoft.EntityFrameworkCore.Model.Validation [Error] => db
+2022-11-21 15:36:54.6933 Debug Logger Microsoft.EntityFrameworkCore.Model.Validation [Fatal] => db
+2022-11-21 15:36:54.8758 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Update
+2022-11-21 15:36:54.8758 Debug Logger Microsoft.EntityFrameworkCore.Update [Warn] => db
+2022-11-21 15:36:54.8758 Debug Logger Microsoft.EntityFrameworkCore.Update [Error] => db
+2022-11-21 15:36:54.8758 Debug Logger Microsoft.EntityFrameworkCore.Update [Fatal] => db
+2022-11-21 15:36:54.9620 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Migrations
+2022-11-21 15:36:54.9620 Debug Logger Microsoft.EntityFrameworkCore.Migrations [Warn] => db
+2022-11-21 15:36:54.9620 Debug Logger Microsoft.EntityFrameworkCore.Migrations [Error] => db
+2022-11-21 15:36:54.9620 Debug Logger Microsoft.EntityFrameworkCore.Migrations [Fatal] => db
+2022-11-21 15:36:55.1127 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:36:55.1127 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:36:55.1127 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:36:55.1127 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector
+2022-11-21 15:36:55.1127 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector [Warn] => db
+2022-11-21 15:36:55.1127 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector [Error] => db
+2022-11-21 15:36:55.1127 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector [Fatal] => db
+2022-11-21 15:36:55.1258 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor
+2022-11-21 15:36:55.1258 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Warn] => db
+2022-11-21 15:36:55.1258 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Error] => db
+2022-11-21 15:36:55.1258 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Fatal] => db
+2022-11-21 15:37:55.8304 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:37:55.8304 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:37:55.8304 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:37:55.8464 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:37:55.8464 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:39:38.3675 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:39:39.2209 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:39:46.0353 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:39:46.0353 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14
+2022-11-21 15:39:46.0353 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): The EXECUTE permission was denied on the object 'AddLogEntry', database 'CorgiShop', schema 'dbo'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean isAsync, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at Microsoft.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String method)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry, String methodName)
+   at Microsoft.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at NLog.Targets.DatabaseTarget.ExecuteDbCommandWithParameters(LogEventInfo logEvent, IDbConnection dbConnection, IDbTransaction dbTransaction)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:ab5a668c-3482-4e52-ac06-3d5d7f56b495
+Error Number:229,State:5,Class:14

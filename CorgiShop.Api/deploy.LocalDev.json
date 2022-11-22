@@ -1,5 +1,6 @@
 {
   "ConnectionStrings": {
-    "WebApiDatabase": "Data Source=localhost; Initial Catalog=CorgiShop; User Id=svc_corgi_api; Password=fjh3_edmciv73jm; TrustServerCertificate=True"
+    "WebApiDatabase": "Data Source=localhost; Initial Catalog=CorgiShop; User Id=svc_corgi_api; Password=fjh3_edmciv73jm; TrustServerCertificate=True",
+    "Redis": "localhost,password=gjf8dkKHJdsjd78fk_8edd"
   }
 }

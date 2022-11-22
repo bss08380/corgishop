@@ -12,16 +12,24 @@ services:
       - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/corgishop.pfx
     volumes:
       - ~/.aspnet/https:/https:ro
+    depends_on:
+      - db-sql
+      - migrations
+      - cache-redis
     networks:
       corginet:
-        ipv4_address: 192.168.55.10
 
   cache-redis:
     container_name: corgishop-cache
     image: "redis:alpine"
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning --requirepass gjf8dkKHJdsjd78fk_8edd
+    volumes: 
+      - cache:/data
     networks:
       corginet:
-        ipv4_address: 192.168.55.9
 
   db-sql:
     container_name: corgishop-db
@@ -30,7 +38,6 @@ services:
       - "1433:1433"
     networks:
       corginet:
-        ipv4_address: 192.168.55.8
     environment:
       SA_PASSWORD: "dhd743hf_g83hdf_gsd89g"
       ACCEPT_EULA: "Y"
@@ -45,7 +52,6 @@ services:
       - db-sql
     networks:
       corginet:
-        ipv4_address: 192.168.55.15
 
 networks:
   corginet:
@@ -54,3 +60,7 @@ networks:
      config:
        - subnet: 192.168.55.0/24
          gateway: 192.168.55.1
+
+volumes:
+  cache:
+    driver: local

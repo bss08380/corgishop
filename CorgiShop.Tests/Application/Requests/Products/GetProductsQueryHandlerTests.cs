@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CorgiShop.Application.Requests.Products;
+using CorgiShop.Application.Features.Products.Queries.GetProducts;
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
 using CorgiShop.Domain.Model;

@@ -1,13 +1,7 @@
-﻿using CorgiShop.Application.Requests.Products;
-using CorgiShop.Domain.Model;
-using CorgiShop.Domain;
+﻿using CorgiShop.Domain;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MediatR;
+using CorgiShop.Application.Features.Products.Commands.DeleteProduct;
 
 namespace CorgiShop.Tests.Application.Requests.Products;
 

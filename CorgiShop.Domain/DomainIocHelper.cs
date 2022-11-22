@@ -6,13 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Domain
+namespace CorgiShop.Domain;
+
+public class DomainIocHelper : IIocHelper
 {
-    public class DomainIocHelper : IIocHelper
+    public void RegisterServices(IServiceCollection serviceCollection)
     {
-        public void RegisterServices(IServiceCollection serviceCollection)
-        {
-            serviceCollection.AddTransient<IProductsRepository, ProductsRepository>();
-        }
+        serviceCollection.AddTransient<IProductsRepository, ProductsRepository>();
     }
 }

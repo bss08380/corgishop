@@ -5,12 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CorgiShop.Domain
+namespace CorgiShop.Domain;
+
+public interface IProductsRepository
 {
-    public interface IProductsRepository
-    {
-        Task<int> GetTotalAvailable();
-        Task<IEnumerable<Product>> GetPaginated(int limit, int offset);
-        Task Delete(int productId);
-    }
+    Task<int> GetTotalAvailable();
+    Task<IEnumerable<Product>> GetPaginated(int limit, int offset);
+    Task Delete(int productId);
 }

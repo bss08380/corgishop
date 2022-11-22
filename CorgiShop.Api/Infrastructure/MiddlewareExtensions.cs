@@ -2,13 +2,12 @@
 using Microsoft.AspNetCore.Diagnostics;
 using System.Net;
 
-namespace CorgiShop.Api.Infrastructure
+namespace CorgiShop.Api.Infrastructure;
+
+public static class MiddlewareExtensions
 {
-    public static class MiddlewareExtensions
+    public static void ConfigureExceptionHandler(this IApplicationBuilder app)
     {
-        public static void ConfigureExceptionHandler(this IApplicationBuilder app)
-        {
-            app.UseMiddleware<ExceptionMiddleware>();
-        }
+        app.UseMiddleware<ExceptionMiddleware>();
     }
 }
