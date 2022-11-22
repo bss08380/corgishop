@@ -30,7 +30,6 @@ public class CachingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
 
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
-        if (!request.CacheEnable) return await next();
         var cachedResponse = await _cache.GetAsync(request.CacheKey, cancellationToken);
 
         TResponse response;

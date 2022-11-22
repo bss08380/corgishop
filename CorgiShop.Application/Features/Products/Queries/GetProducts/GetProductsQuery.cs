@@ -10,8 +10,6 @@ public record GetProductsQuery : IRequest<GetProductsDto>, ICacheableQuery
     public required int Offset { get; init; }
 
     [JsonIgnore]
-    public bool CacheEnable => true;
-    [JsonIgnore]
     public string CacheKey => $"CorgiShop:Products:Page-{Limit}-{Offset}";
     [JsonIgnore]
     public TimeSpan? TimeToLive => TimeSpan.FromMinutes(5);
