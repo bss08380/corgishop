@@ -1,18 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
-using System.Collections.Generic;
+﻿using CorgiShop.Domain.Abstractions;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CorgiShop.Domain.Model;
 
-public class Product
+public class Product : IRepositoryEntity
 {
     [Key]
-    public int ProductId { get; set; }
+    public int Id { get; set; }
 
     [Required]
     public string Name { get; set; } = string.Empty;

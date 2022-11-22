@@ -2,6 +2,8 @@
 using CorgiShop.Application.CQRS.Base;
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
+using CorgiShop.Domain.Abstractions;
+using CorgiShop.Domain.Features.Products;
 using CorgiShop.Domain.Model;
 using MediatR;
 
@@ -11,14 +13,14 @@ public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, GetProd
 {
     private const int MAX_PAGE_SIZE = 200;
 
-    private readonly IProductsRepository _corgiShopRepo;
+    private readonly IProductRepository _productRepository;
     private readonly IMapper _mapper;
 
     public GetProductsQueryHandler(
-        IProductsRepository corgiShopRepo,
+        IProductRepository productRepository,
         IMapper mapper)
     {
-        _corgiShopRepo = corgiShopRepo;
+        _productRepository = productRepository;
         _mapper = mapper;
     }
 
@@ -26,8 +28,8 @@ public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, GetProd
     {
         if (request.Limit > MAX_PAGE_SIZE) throw DetailedException.FromFailedVerification(nameof(request.Limit), $"Maximum limit size is {MAX_PAGE_SIZE}");
 
-        int total = await _corgiShopRepo.GetTotalAvailable();
-        var results = (await _corgiShopRepo.GetPaginated(request.Limit, request.Offset)).Select(p => _mapper.Map<Product, ProductDto>(p));
+        int total = await _productRepository.Count();
+        var results = (await _productRepository.ListPaginated(request.Limit, request.Offset)).Select(p => _mapper.Map<Product, ProductDto>(p));
 
         return new GetProductsDto()
         {

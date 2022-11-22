@@ -1,7 +1,7 @@
 ﻿using CorgiShop.Common.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
-namespace CorgiShop.Api.Infrastructure;
+namespace CorgiShop.Api.Middleware;
 
 public class ExceptionMiddleware
 {

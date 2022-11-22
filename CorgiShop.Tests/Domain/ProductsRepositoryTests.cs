@@ -1,5 +1,7 @@
 ﻿using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
+using CorgiShop.Domain.Abstractions;
+using CorgiShop.Domain.Features.Products;
 using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
 using System.Security.Cryptography;
@@ -16,7 +18,7 @@ public class ProductsRepositoryTests : TestBase
         //Arrange
         var uut = await GetUut(10, 0);
         //Act
-        var products = await uut.GetPaginated(100, 0);
+        var products = await uut.ListPaginated(100, 0);
         //Assert
         Assert.Equal(10, products.Count());
     }
@@ -27,7 +29,7 @@ public class ProductsRepositoryTests : TestBase
         //Arrange
         var uut = await GetUut(10, 5);
         //Act
-        var products = await uut.GetPaginated(100, 0);
+        var products = await uut.ListPaginated(100, 0);
         //Assert
         Assert.Equal(10, products.Count());
     }
@@ -38,7 +40,7 @@ public class ProductsRepositoryTests : TestBase
         //Arrange
         var uut = await GetUut(0, 15);
         //Act
-        var products = await uut.GetPaginated(100, 0);
+        var products = await uut.ListPaginated(100, 0);
         //Assert
         Assert.Empty(products);
     }
@@ -49,7 +51,7 @@ public class ProductsRepositoryTests : TestBase
         //Arrange
         var uut = await GetUut(500, 0);
         //Act
-        var products = await uut.GetPaginated(1000, 0);
+        var products = await uut.ListPaginated(1000, 0);
         //Assert
         Assert.Equal(200, products.Count());
     }
@@ -60,7 +62,7 @@ public class ProductsRepositoryTests : TestBase
         //Arrange
         var uut = await GetUut(100, 0);
         //Act
-        var products = await uut.GetPaginated(10, 0);
+        var products = await uut.ListPaginated(10, 0);
         //Assert
         Assert.Equal(10, products.Count());
     }
@@ -71,7 +73,7 @@ public class ProductsRepositoryTests : TestBase
         //Arrange
         var uut = await GetUut(20, 0);
         //Act
-        var products = await uut.GetPaginated(10, 0);
+        var products = await uut.ListPaginated(10, 0);
         //Assert
         Assert.True(VerifySequentialCollectionByPidName(products, 0));
     }
@@ -82,7 +84,7 @@ public class ProductsRepositoryTests : TestBase
         //Arrange
         var uut = await GetUut(20, 0);
         //Act
-        var products = await uut.GetPaginated(10, 10);
+        var products = await uut.ListPaginated(10, 10);
         //Assert
         Assert.True(VerifySequentialCollectionByPidName(products, 10));
     }
@@ -92,13 +94,13 @@ public class ProductsRepositoryTests : TestBase
     {
         //Arrange
         var uut = await GetUut(10, 0);
-        var firstProductId = DbContext!.Products.FirstOrDefault()!.ProductId;
+        var firstProductId = DbContext!.Products.FirstOrDefault()!.Id;
         //Act
-        await uut.Delete(firstProductId);
+        await uut.SoftDelete(firstProductId);
         //Assert
         Assert.Equal(10, DbContext.Products.Count());
         Assert.Single(DbContext.Products.Where(p => p.IsDeleted));
-        Assert.True(DbContext!.Products.FirstOrDefault(p => p.ProductId == firstProductId)!.IsDeleted);
+        Assert.True(DbContext!.Products.FirstOrDefault(p => p.Id == firstProductId)!.IsDeleted);
     }
 
     [Fact]
@@ -112,7 +114,7 @@ public class ProductsRepositoryTests : TestBase
         await Assert.ThrowsAsync<DetailedException>(action);
     }
 
-    private async Task<IProductsRepository> GetUut(int productCnt, int deletedCnt)
+    private async Task<IRepository<Product>> GetUut(int productCnt, int deletedCnt)
     {
         int testPid = 0;
         var dbContext = await RigCorgiShopDbContext(db =>
@@ -129,7 +131,7 @@ public class ProductsRepositoryTests : TestBase
                 testPid++;
             }
         });
-        return new ProductsRepository(dbContext);
+        return new ProductRepository(dbContext);
     }
 
     private Product NewProduct(bool isDeleted, int testingPid)

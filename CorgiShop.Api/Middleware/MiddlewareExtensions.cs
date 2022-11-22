@@ -1,8 +1,4 @@
-﻿using CorgiShop.Common.Model;
-using Microsoft.AspNetCore.Diagnostics;
-using System.Net;
-
-namespace CorgiShop.Api.Infrastructure;
+﻿namespace CorgiShop.Api.Middleware;
 
 public static class MiddlewareExtensions
 {

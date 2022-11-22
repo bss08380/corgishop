@@ -1,6 +1,6 @@
 ﻿using CorgiShop.Common.Model;
 
-namespace CorgiShop.Common.Exceptions;
+namespace CorgiShop.Common.Abstractions;
 
 public interface IDetailedException
 {

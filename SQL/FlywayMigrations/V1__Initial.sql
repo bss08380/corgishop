@@ -16,7 +16,7 @@ if object_id('Products', 'U') is null
 begin
 	create table Products
 	(
-		ProductId int not null primary key identity(1,1),
+		Id int not null primary key identity(1,1),
 		Name nvarchar(128) not null,
 		Description nvarchar(128) not null,
 		Price decimal not null default(0.0),
