@@ -55,12 +55,14 @@ public class CachedRepository<T> : IRepository<T>
 
     private async Task ClearIdAndAllCache(int id)
     {
+        _logger.LogDebug($"Clearing entity cache for: {GetEntityCacheKey(id)}");
         await _cachingService.ClearCache(GetEntityCacheKey(id));
         await ClearAllCache();
     }
 
     private async Task ClearAllCache()
     {
+        _logger.LogDebug($"Clearing all cache for: {GetCacheKeyBase()}");
         await _cachingService.ClearCache(GetCountCacheKey());
         await _cachingService.ClearCache(GetListCacheKey());
         await _cachingService.ClearCache(GetPageCacheKeyBase());

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CorgiShop.Domain.Base;
 
-public abstract class RepositoryBase<T> : IRepository<T> where T : class, IRepositoryEntity
+public class RepositoryBase<T> : IRepository<T> where T : class, IRepositoryEntity
 {
     private readonly DbContext _context;
 

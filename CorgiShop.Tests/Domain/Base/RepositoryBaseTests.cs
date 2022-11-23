@@ -1,17 +1,14 @@
 ﻿using CorgiShop.Common.Exceptions;
-using CorgiShop.Domain;
 using CorgiShop.Domain.Abstractions;
+using CorgiShop.Domain.Base;
 using CorgiShop.Domain.Features.Products;
 using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
-using System.Security.Cryptography;
 
-namespace CorgiShop.Tests.Domain;
+namespace CorgiShop.Tests.Domain.Base;
 
-public class ProductsRepositoryTests : TestBase
+public class RepositoryBaseTests : TestBase
 {
-    private Random _rand = new Random();
-
     [Fact]
     public async Task GetPaginated_NoneDeleted()
     {
@@ -131,18 +128,19 @@ public class ProductsRepositoryTests : TestBase
                 testPid++;
             }
         });
-        return new ProductRepository(dbContext);
+        return new RepositoryBase<Product>(dbContext);
     }
 
     private Product NewProduct(bool isDeleted, int testingPid)
     {
-        return new Product() {
+        return new Product()
+        {
             Name = GetTestingIdxString(testingPid),
             Description = testingPid.ToString(),
             Price = 0.0M,
             Stock = 0,
             IsDeleted = isDeleted
-            };
+        };
     }
 
     private bool VerifySequentialCollectionByPidName(IEnumerable<Product> products, int startPid)

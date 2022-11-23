@@ -3,6 +3,7 @@ using CorgiShop.Application.Features.Products.Queries.GetProducts;
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
 using CorgiShop.Domain.Abstractions;
+using CorgiShop.Domain.Features.Products;
 using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
 using Moq;
@@ -12,7 +13,7 @@ namespace CorgiShop.Tests.Application.Requests.Products;
 public class GetProductsQueryHandlerTests : TestBase
 {
     private readonly Mock<IMapper> _mockedMapper;
-    private readonly Mock<IQueryRepository<Product>> _mockedRepo;
+    private readonly Mock<IProductRepository> _mockedRepo;
 
     public GetProductsQueryHandlerTests()
     {
@@ -58,7 +59,7 @@ public class GetProductsQueryHandlerTests : TestBase
         return mockedMapper;
     }
 
-    private Mock<IQueryRepository<Product>> RigMockedProductRepo()
+    private Mock<IProductRepository> RigMockedProductRepo()
     {
         var productList = new List<Product>()
             {
@@ -68,7 +69,7 @@ public class GetProductsQueryHandlerTests : TestBase
                 new Product(),
                 new Product()
             };
-        var mockedRepo = new Mock<IQueryRepository<Product>>();
+        var mockedRepo = new Mock<IProductRepository>();
         mockedRepo.Setup(r => r.ListPaginated(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(productList.Take(3));
         mockedRepo.Setup(r => r.Count()).ReturnsAsync(productList.Count());
         return mockedRepo;
