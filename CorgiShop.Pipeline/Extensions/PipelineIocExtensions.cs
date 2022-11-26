@@ -21,6 +21,10 @@ public static class PipelineIocExtensions
         services.AddTransient<IRepository<TEntity>, TRepositoryImplementation>();
         services.AddTransient<TRepositoryInterface, TRepositoryImplementation>();
 
+        //Commands
+        services.AddTransient<IRequestHandler<DeleteCommand<TDto>>, DeleteCommandHandler<TDto, TEntity>>();
+
+        //Queries
         services.AddTransient<IRequestHandler<GetListPaginatedQuery<TDto>, PaginatedResultsDto<TDto>>, GetListPaginatedQueryHandler<TDto, TEntity>>();
     }
 

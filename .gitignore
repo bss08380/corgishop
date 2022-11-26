@@ -19,6 +19,9 @@ mono_crash.*
 # Temp files
 [Tt]emp/
 
+# NLog Log File
+*nlog.txt
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
