@@ -1,11 +1,5 @@
-﻿using CorgiShop.Common.Exceptions;
-using CorgiShop.Domain.Abstractions;
-using Microsoft.Extensions.Caching.Distributed;
+﻿using CorgiShop.Pipeline.Abstractions;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.Json;
 
 namespace CorgiShop.Application.Caching;
 

@@ -1,6 +1,6 @@
-﻿using CorgiShop.Application.Abstractions;
+﻿using CorgiShop.Pipeline.Abstractions;
 using MediatR;
 
-namespace CorgiShop.Application.Base;
+namespace CorgiShop.Pipeline.Base;
 
 public abstract record GetCountQuery<TDto> : IRequest where TDto : class, IDtoEntity;

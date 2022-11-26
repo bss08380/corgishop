@@ -1,7 +1,4 @@
-﻿using CorgiShop.Domain;
-using CorgiShop.Domain.Abstractions;
-using CorgiShop.Domain.Features.Products;
-using CorgiShop.Domain.Model;
+﻿using CorgiShop.Domain.Features.Products;
 using MediatR;
 
 namespace CorgiShop.Application.Features.Products.Commands.DeleteProduct;

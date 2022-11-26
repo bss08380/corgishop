@@ -30,6 +30,7 @@
     <ProjectReference Include="..\CorgiShop.Common\CorgiShop.Common.csproj" />
     <ProjectReference Include="..\CorgiShop.DataGen\CorgiShop.DataGen.csproj" />
     <ProjectReference Include="..\CorgiShop.Domain\CorgiShop.Domain.csproj" />
+    <ProjectReference Include="..\CorgiShop.Pipeline\CorgiShop.Pipeline.csproj" />
   </ItemGroup>
 
 </Project>

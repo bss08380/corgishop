@@ -1,7 +1,6 @@
-﻿using CorgiShop.Api.Base;
-using CorgiShop.Application.Features.Products;
+﻿using CorgiShop.Application.Features.Products;
 using CorgiShop.Application.Features.Products.Commands.GenerateProducts;
-using CorgiShop.Application.Features.Products.Queries.GetProducts;
+using CorgiShop.Pipeline.Base;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

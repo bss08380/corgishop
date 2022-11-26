@@ -1,5 +1,5 @@
-﻿using CorgiShop.Domain.Abstractions;
-using CorgiShop.Domain.Model;
+﻿using CorgiShop.Domain.Model;
+using CorgiShop.Pipeline.Abstractions;
 
 namespace CorgiShop.Domain.Features.Products;
 

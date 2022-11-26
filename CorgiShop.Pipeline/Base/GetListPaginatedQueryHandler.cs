@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
-using CorgiShop.Application.Abstractions;
-using CorgiShop.Application.CQRS.Base;
 using CorgiShop.Common.Exceptions;
-using CorgiShop.Domain.Abstractions;
+using CorgiShop.Pipeline.Abstractions;
 using MediatR;
 
-namespace CorgiShop.Application.Base;
+namespace CorgiShop.Pipeline.Base;
 
 public class GetListPaginatedQueryHandler<TDto, TRepo> : IRequestHandler<GetListPaginatedQuery<TDto>, PaginatedResultsDto<TDto>>
     where TDto : class, IDtoEntity 

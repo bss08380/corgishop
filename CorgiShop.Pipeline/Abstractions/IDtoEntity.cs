@@ -1,4 +1,4 @@
-﻿namespace CorgiShop.Application.Abstractions;
+﻿namespace CorgiShop.Pipeline.Abstractions;
 
 public interface IDtoEntity
 {

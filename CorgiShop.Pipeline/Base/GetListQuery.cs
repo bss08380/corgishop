@@ -1,7 +1,7 @@
-﻿using CorgiShop.Application.Abstractions;
+﻿using CorgiShop.Pipeline.Abstractions;
 using MediatR;
 
-namespace CorgiShop.Application.Base;
+namespace CorgiShop.Pipeline.Base;
 
 public class GetListQuery<TDto> : IRequest
     where TDto : class, IDtoEntity

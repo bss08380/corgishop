@@ -1,8 +1,8 @@
 ﻿using CorgiShop.Common.Exceptions;
-using CorgiShop.Domain.Abstractions;
+using CorgiShop.Pipeline.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
-namespace CorgiShop.Domain.Base;
+namespace CorgiShop.Pipeline.Base;
 
 public class RepositoryBase<T> : IRepository<T> where T : class, IRepositoryEntity
 {

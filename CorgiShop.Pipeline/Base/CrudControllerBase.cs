@@ -1,9 +1,10 @@
-﻿using CorgiShop.Application.Abstractions;
-using CorgiShop.Application.Base;
+﻿using CorgiShop.Pipeline.Abstractions;
+using CorgiShop.Pipeline.Base;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CorgiShop.Api.Base;
+namespace CorgiShop.Pipeline.Base;
 
 public abstract class CrudControllerBase<TDto> : Controller
     where TDto : class, IDtoEntity
