@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CorgiShop.Common\CorgiShop.Common.csproj" />
+    <ProjectReference Include="..\CorgiShop.Pipeline\CorgiShop.Pipeline.csproj" />
   </ItemGroup>
 
 </Project>

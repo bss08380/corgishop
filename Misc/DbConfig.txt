@@ -1,0 +1,6 @@
+SQL Server Login:
+
+	corgi_shop_api
+	d893nf73nfgo_23ndfu732fie
+
+	Only data CorgiShop db read/write access provided

@@ -2,16 +2,19 @@
 using Moq;
 using MediatR;
 using CorgiShop.Application.Features.Products.Commands.DeleteProduct;
+using CorgiShop.Domain.Abstractions;
+using CorgiShop.Domain.Model;
+using CorgiShop.Domain.Features.Products;
 
 namespace CorgiShop.Tests.Application.Requests.Products;
 
 public class DeleteProductsCommandHandlerTests
 {
-    private Mock<IProductsRepository> _mockedRepository;
+    private Mock<IProductRepository> _mockedRepository;
 
     public DeleteProductsCommandHandlerTests()
     {
-        _mockedRepository = new Mock<IProductsRepository>();
+        _mockedRepository = new Mock<IProductRepository>();
         _mockedRepository.Setup(r => r.Delete(0));
     }
 

@@ -1,4 +1,5 @@
-﻿using CorgiShop.Common.Model;
+﻿using CorgiShop.Common.Abstractions;
+using CorgiShop.Common.Model;
 using System.Net;
 
 namespace CorgiShop.Common.Exceptions;

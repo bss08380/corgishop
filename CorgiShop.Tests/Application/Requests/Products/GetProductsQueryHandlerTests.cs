@@ -1,7 +1,10 @@
 ﻿using AutoMapper;
+using CorgiShop.Application.Features.Products;
 using CorgiShop.Application.Features.Products.Queries.GetProducts;
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
+using CorgiShop.Domain.Abstractions;
+using CorgiShop.Domain.Features.Products;
 using CorgiShop.Domain.Model;
 using CorgiShop.Tests.Base;
 using Moq;
@@ -11,7 +14,7 @@ namespace CorgiShop.Tests.Application.Requests.Products;
 public class GetProductsQueryHandlerTests : TestBase
 {
     private readonly Mock<IMapper> _mockedMapper;
-    private readonly Mock<IProductsRepository> _mockedRepo;
+    private readonly Mock<IProductRepository> _mockedRepo;
 
     public GetProductsQueryHandlerTests()
     {
@@ -48,7 +51,7 @@ public class GetProductsQueryHandlerTests : TestBase
         await Assert.ThrowsAsync<DetailedException>(async () => await uut.Handle(query, CancellationToken.None));
     }
 
-    private GetProductsQueryHandler GetUut() => new GetProductsQueryHandler(_mockedRepo.Object, _mockedMapper.Object);
+    private GetProductsListPaginatedQueryHandler GetUut() => new GetProductsListPaginatedQueryHandler(_mockedRepo.Object, _mockedMapper.Object);
 
     private Mock<IMapper> RigMockedMapper()
     {
@@ -57,7 +60,7 @@ public class GetProductsQueryHandlerTests : TestBase
         return mockedMapper;
     }
 
-    private Mock<IProductsRepository> RigMockedProductRepo()
+    private Mock<IProductRepository> RigMockedProductRepo()
     {
         var productList = new List<Product>()
             {
@@ -67,11 +70,11 @@ public class GetProductsQueryHandlerTests : TestBase
                 new Product(),
                 new Product()
             };
-        var mockedRepo = new Mock<IProductsRepository>();
-        mockedRepo.Setup(r => r.GetPaginated(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(productList.Take(3));
-        mockedRepo.Setup(r => r.GetTotalAvailable()).ReturnsAsync(productList.Count());
+        var mockedRepo = new Mock<IProductRepository>();
+        mockedRepo.Setup(r => r.ListPaginated(It.IsAny<int>(), It.IsAny<int>())).ReturnsAsync(productList.Take(3));
+        mockedRepo.Setup(r => r.Count()).ReturnsAsync(productList.Count());
         return mockedRepo;
     }
 
-    private GetProductsQuery GetRequestQuery(int limit, int offset) => new GetProductsQuery() { Limit = limit, Offset = offset };
+    private GetProductsListPaginatedQuery GetRequestQuery(int limit, int offset) => new GetProductsListPaginatedQuery() { Limit = limit, Offset = offset };
 }
