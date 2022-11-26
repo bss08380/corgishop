@@ -16,6 +16,10 @@ public abstract class CrudControllerBase<TDto> : Controller
         _mediator = sender;
     }
 
+    [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult> Delete([FromQuery] DeleteCommand<TDto> query) => Ok(await _mediator.Send(query));
+
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> Get([FromQuery] GetListPaginatedQuery<TDto> query) => Ok(await _mediator.Send(query));

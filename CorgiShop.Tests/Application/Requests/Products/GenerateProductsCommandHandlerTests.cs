@@ -23,14 +23,14 @@ public class GenerateProductsCommandHandlerTests : TestBase, IAsyncLifetime
         _mockedProductDataGenService.VerifyAll();
     }
 
-    private GenerateProductsCommandHandler GetUut() => new GenerateProductsCommandHandler(DbContext!, _mockedProductDataGenService.Object);
+    private GenerateProductsCommandHandler GetUut() => new GenerateProductsCommandHandler(CorgiShopDbContext!, _mockedProductDataGenService.Object);
 
     private GenerateProductsCommand GetGenerateCommand(int cnt) => new GenerateProductsCommand(cnt);
 
     public async Task InitializeAsync()
     {
         await RigCorgiShopDbContext((context) => { });
-        _mockedProductDataGenService.Setup(s => s.GenerateProducts(DbContext!, 10));
+        _mockedProductDataGenService.Setup(s => s.GenerateProducts(CorgiShopDbContext!, 10));
     }
 
     public Task DisposeAsync() => Task.CompletedTask;
