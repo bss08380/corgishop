@@ -3,7 +3,7 @@ using MediatR;
 
 namespace CorgiShop.Pipeline.Base;
 
-public class DeleteCommandHandler<TDto, TEntity> : IRequestHandler<DeleteCommand<TDto>>
+public class DeleteCommandHandler<TDto, TEntity> : IRequestHandler<DeleteCommand<TDto>, Unit>
     where TDto : class, IDtoEntity
     where TEntity : class, IRepositoryEntity
 {
