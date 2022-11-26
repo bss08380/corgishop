@@ -97,6 +97,45 @@ A combination of standard DI and a NuGet package called Scrutor make this a lot 
 
 Why go through all of this? To make it simple to expand the number of repositories, and in this case, the number of cached repositories. The majority of transactions through the API are going to be CRUD and the generic interfaces/base classes provide a single implementation to rely on regardless of the number of different kinds of entities are introduced into the domain. More importantly, in my opinion, it DRASTICALLY cuts down on unit testing. With this implementation, a single file of tests can lock down the basic CRUD stuff and I never have to worry about testing that again.
 
+## Base Implementations of Controllers and Commands/Handlers
+
+All CRUD operations are handled in a series of abstract base classes that span from the Controller level (i.e. `CrudController`) to the Mediatr request level (i.e. `GetListPaginatedQuery/Handler<,>`). These base classes provided all necessary logic to allow for basic CRUD operations. Generics are used extensively to put all of this in place.
+
+An specific Controller (for example, the `ProductController`), can then be focused on behavior that is specific to Products, and not simply another implementation of CRUD. See the below example. `ProductController` has the basic CRUD operations abstracted from it, and must only worry about a Product-specific endpoint to generate fake products.
+
+```
+public class GetProductsListPaginatedQueryHandler : GetListPaginatedQueryHandler<ProductDto, Product>
+{
+    public GetProductsListPaginatedQueryHandler(
+        IProductRepository productRepository,
+        IMapper mapper)
+        : base(productRepository, mapper)
+    {
+    }
+}
+```
+
+Furthermore, `IRequest` implementations and their handlers also have associated base classes to derive from. Entity-specific actions (like generating products) will continue to be their own set of fully implemented requests and handlers, while common crud operations are relegated to having a paper-thin derived class necessary to have around only for DI purposes:
+
+```
+public class GetProductsListPaginatedQueryHandler : GetListPaginatedQueryHandler<ProductDto, Product>
+{
+    public GetProductsListPaginatedQueryHandler(
+        IProductRepository productRepository,
+        IMapper mapper)
+        : base(productRepository, mapper)
+    {
+    }
+}
+```
+
+As alluded to above, the wrapper/drived classes (like the one above) are necessary for DI. I don't at this time want to add in a different DI engine (like Autofac, for example), which may or may not allow for a more nuanced implementation of this generic pipeline from Controller down to Repository.
+
+Specifics of this challengs are:
+
+- Injecting the correct Repository into the handler relying only on generics (given that repositories may, or will likely have, actual derived types - like ProductRepository - and I don't want to register them twice or burden a future developer with remembering this odd behavior)
+- Handler requires two generic types the Dto type, and the Domain type (IDtoEntity and IRepositoryEntity respectively) and thus does not map perfectly to the query only having one type. I don't want the queries to need to 
+
 ## Troubleshooting
 
 ### CSS files aren't fetched by the WASM app after docker deployment

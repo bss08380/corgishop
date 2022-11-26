@@ -1,17 +1,18 @@
 ﻿using CorgiShop.Api.Authorization;
+using CorgiShop.Application.Base;
 using CorgiShop.Application.Caching;
+using CorgiShop.Application.Features.Products;
 using CorgiShop.Application.Features.Products.Queries.GetProducts;
 using CorgiShop.Application.Middleware;
 using CorgiShop.Common.Settings;
 using CorgiShop.DataGen.Services;
+using CorgiShop.Domain.Abstractions;
 using CorgiShop.Domain.Features.Products;
 using CorgiShop.Domain.Model;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Caching.Distributed;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog.Extensions.Logging;
@@ -73,13 +74,15 @@ public static class BuilderExtensions
 
     public static void ConfigureAutoMapper(this WebApplicationBuilder builder)
     {
-        builder.Services.AddAutoMapper(typeof(GetProductsQuery).Assembly);
+        builder.Services.AddAutoMapper(typeof(GetProductsListPaginatedQuery).Assembly);
     }
 
     public static void ConfigureMediatrServices(this WebApplicationBuilder builder)
     {
         builder.Services.AddMediatR(typeof(Program).Assembly);
-        builder.Services.AddMediatR(typeof(GetProductsQuery).Assembly);
+        builder.Services.AddMediatR(typeof(GetProductsListPaginatedQuery).Assembly);
+
+        //builder.Services.AddTransient(typeof(IRequestHandler<GetListPaginatedQuery<ProductDto>, GetListPaginatedDto<ProductDto>>), typeof(GetListPaginatedQueryHandler<ProductDto,Product>));
     }
 
     public static void ConfigureCorgiShopServices(this WebApplicationBuilder builder)
@@ -89,6 +92,9 @@ public static class BuilderExtensions
         builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(CachingBehavior<,>));
 
         builder.Services.AddScoped<ICachingService, CachingService>();
+
+        builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
+        builder.Services.Decorate<IRepository<Product>, CachedProductRepository>();
 
         builder.Services.AddScoped<IProductRepository, ProductRepository>();
         builder.Services.Decorate<IProductRepository, CachedProductRepository>();

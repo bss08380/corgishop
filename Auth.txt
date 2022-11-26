@@ -1,0 +1,23 @@
+Auth0 OAuth Client:
+https://dev-i1iklgckj03sp4hv.us.auth0.com/authorize
+
+	ID: 
+	tMamXXW112EwaugoEamvryK5yp2M4QH8
+
+	Secret:
+	<in Auth0>
+
+Token:
+https://dev-i1iklgckj03sp4hv.us.auth0.com/oauth/token
+
+
+	{
+	    "access_token": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIiwiaXNzIjoiaHR0cHM6Ly9kZXYtaTFpa2xnY2tqMDNzcDRodi51cy5hdXRoMC5jb20vIn0..aFfCVkK31XqzV6s7.1ibPWtDaifTvwlC9LhE7tA2nrzntrUTgu7KmDxQSWmY09faHGyff3wRtI_azKleh9mruA5HFSqNgyGmHKHEePUA7K5ZTUoY_ldZUPO62zTfuOFppqh20TGA1Tc0TejSo3zyAuUV3n23TYCijWoq5n2UbiqYU4zucgJ3-Y4TUf8sxNPLwVhI6c0fhpIPlfLU2tOpoS3-elQnYdrxvQOswE6zyMBRxnrbgqouHzrQpWb909GctrjirBRD81TSJc2C0auFtvCrJnDfXM6L6vUKqzFJbEXzHz783KNad0EB9dBzBS-3T6PS8S3iPeao9L6e9Y0xsxA.agKaahu6LreSg-D-8kwNaQ",
+	    "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InAwUldnb1BEWGY0b3YzeDVYLXdMViJ9.eyJpc3MiOiJodHRwczovL2Rldi1pMWlrbGdja2owM3NwNGh2LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MzcxMjgxZmZhYzJmN2ViNmQ3MmQ4NmYiLCJhdWQiOiJ0TWFtWFhXMTEyRXdhdWdvRWFtdnJ5SzV5cDJNNFFIOCIsImlhdCI6MTY2ODM2MDc3MiwiZXhwIjoxNjY4Mzk2NzcyLCJzaWQiOiJoMXVlbnAyRzNObWp5aUpPcjFTY2RBR0VpdHdfTUplOSIsIm5vbmNlIjoiNnZuOTd6NDRjd3gifQ.lJ7ZewUgJjvflcNDYp76gfWb-OTgGc7kO6E_tmFwdmb8fCZD4-_M_e3_UjKviJBZBAdb8mRI9D7Mlf0zKIRCu4hctMUmdUPHuc2y0aO0gC-982a9jVOAngr8eENzBThfDbYnamQsNN63uTb-2hX45Ww27unGpJuQ-tVLdItzBIp4JIhjm-ub1kN7cU752S0LB7Yq0VK0nCCbYFArouQu1ZQui0fqhIVw75pyFcWGFLk7GEj-x-yfhnIQ8nPkhGDhec8Nci3xEHQUZ9A7OVg0NTxcSLn-MsecGs04dwekiOOBguP4hIGTClDzvx9Hs0dknI7SDeb6hozhP9jnPEFeeA",
+	    "scope": "openid",
+	    "expires_in": 86400,
+	    "token_type": "Bearer"
+	}
+
+API:
+Audience: https://corgishop.com/api

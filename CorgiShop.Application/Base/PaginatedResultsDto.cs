@@ -1,6 +1,6 @@
 ﻿namespace CorgiShop.Application.CQRS.Base;
 
-public abstract record PaginatedResultsDto<T>
+public record PaginatedResultsDto<T>
 {
     public required QueryPageDto Page { get; set; }
     public required int TotalAvailable { get; set; }

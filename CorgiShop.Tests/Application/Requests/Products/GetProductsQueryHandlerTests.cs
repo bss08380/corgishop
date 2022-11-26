@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CorgiShop.Application.Features.Products;
 using CorgiShop.Application.Features.Products.Queries.GetProducts;
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain;
@@ -50,7 +51,7 @@ public class GetProductsQueryHandlerTests : TestBase
         await Assert.ThrowsAsync<DetailedException>(async () => await uut.Handle(query, CancellationToken.None));
     }
 
-    private GetProductsQueryHandler GetUut() => new GetProductsQueryHandler(_mockedRepo.Object, _mockedMapper.Object);
+    private GetProductsListPaginatedQueryHandler GetUut() => new GetProductsListPaginatedQueryHandler(_mockedRepo.Object, _mockedMapper.Object);
 
     private Mock<IMapper> RigMockedMapper()
     {
@@ -75,5 +76,5 @@ public class GetProductsQueryHandlerTests : TestBase
         return mockedRepo;
     }
 
-    private GetProductsQuery GetRequestQuery(int limit, int offset) => new GetProductsQuery() { Limit = limit, Offset = offset };
+    private GetProductsListPaginatedQuery GetRequestQuery(int limit, int offset) => new GetProductsListPaginatedQuery() { Limit = limit, Offset = offset };
 }

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CorgiShop.Application.Features.Products.Queries.GetProducts;
+using CorgiShop.Application.Features.Products;
 using CorgiShop.Domain.Model;
 
 namespace CorgiShop.Application.AutoMapper;
