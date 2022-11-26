@@ -15,5 +15,7 @@ public abstract class CrudControllerBase<TDto> : Controller
         _mediator = sender;
     }
 
-    protected virtual async Task<ActionResult> CrudGet(GetListPaginatedQueryBase<TDto> query) => Ok(await _mediator.Send(query));
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult> Get([FromQuery] GetListPaginatedQuery<TDto> query) => Ok(await _mediator.Send(query));
 }

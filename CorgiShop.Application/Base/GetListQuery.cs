@@ -3,4 +3,7 @@ using MediatR;
 
 namespace CorgiShop.Application.Base;
 
-public abstract record GetByIdQueryBase<TDto>(int Id) : IRequest where TDto : class, IDtoEntity;
+public class GetListQuery<TDto> : IRequest
+    where TDto : class, IDtoEntity
+{
+}

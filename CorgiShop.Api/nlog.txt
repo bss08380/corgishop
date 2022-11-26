@@ -6478,3 +6478,742 @@ Error Number:10054,State:0,Class:20
 2022-11-25 22:58:45.8707 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Warn] => db
 2022-11-25 22:58:45.8707 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Error] => db
 2022-11-25 22:58:45.8707 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Fatal] => db
+2022-11-25 23:15:33.8591 Info Message Template Auto Format enabled
+2022-11-25 23:15:33.8591 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-25 23:15:33.8591 Debug ScanAssembly('NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-11-25 23:15:33.8901 Debug Setting 'NLog.Targets.DatabaseTarget.name' to 'db'
+2022-11-25 23:15:33.8901 Debug Setting 'NLog.Targets.DatabaseTarget.connectionString' to '${configsetting:item=ConnectionStrings.WebApiDatabase}'
+2022-11-25 23:15:33.8901 Debug Setting 'NLog.Targets.DatabaseTarget.dbProvider' to 'Microsoft.Data.SqlClient.SqlConnection, Microsoft.Data.SqlClient'
+2022-11-25 23:15:33.8901 Debug Setting 'NLog.Targets.DatabaseTarget.commandType' to 'StoredProcedure'
+2022-11-25 23:15:33.9012 Debug Setting 'NLog.Targets.DatabaseTarget.commandText' to '[dbo].[AddLogEntry]'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@machineName'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${machinename}'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@logged'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${date}'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@level'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${level}'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@message'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${message}'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@logger'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${logger}'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@properties'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${all-event-properties:separator=|}'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@callsite'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${callsite}'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@exception'
+2022-11-25 23:15:33.9224 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${exception:tostring}'
+2022-11-25 23:15:33.9318 Debug Setting 'NLog.LayoutRenderers.ExceptionLayoutRenderer.Format' to 'tostring'
+2022-11-25 23:15:33.9318 Info Adding target DatabaseTarget(Name=db)
+2022-11-25 23:15:33.9318 Debug Registered target db: NLog.Targets.DatabaseTarget
+2022-11-25 23:15:33.9318 Debug Watching file-filter 'NLog.config' in directory: C:\Users\brand\Desktop\CorgiShop\CorgiShop.Api\bin\Debug\net7.0
+2022-11-25 23:15:33.9318 Debug --- NLog configuration dump ---
+2022-11-25 23:15:33.9318 Debug Targets:
+2022-11-25 23:15:33.9318 Debug DatabaseTarget(Name=db)
+2022-11-25 23:15:33.9318 Debug Rules:
+2022-11-25 23:15:33.9318 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info ] writeTo: [ ]
+2022-11-25 23:15:33.9318 Debug logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] writeTo: [ db ]
+2022-11-25 23:15:33.9318 Debug --- End of NLog configuration dump ---
+2022-11-25 23:15:33.9318 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\brand\Desktop\CorgiShop\CorgiShop.Api\bin\Debug\net7.0\NLog.config
+2022-11-25 23:15:33.9318 Debug Unused target checking is started... Rule Count: 2, Target Count: 1
+2022-11-25 23:15:33.9318 Debug Unused target checking is completed. Total Rule Count: 2, Total Target Count: 1, Unused Target Count: 0
+2022-11-25 23:15:33.9690 Info Configuration initialized.
+2022-11-25 23:15:33.9690 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.0.5.1426. Product version: 5.0.5+ace23d89ecf3dc2675648414a1f01ee9c1b2383d. GlobalAssemblyCache: False
+2022-11-25 23:15:33.9690 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Hosting.Internal.ApplicationLifetime
+2022-11-25 23:15:33.9690 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Warn] => db
+2022-11-25 23:15:33.9690 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Error] => db
+2022-11-25 23:15:33.9690 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Fatal] => db
+2022-11-25 23:15:33.9787 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Hosting.Internal.Host
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Warn] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Error] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Fatal] => db
+2022-11-25 23:15:33.9787 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Hosting.Lifetime
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.Hosting.Lifetime [Warn] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.Hosting.Lifetime [Error] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.Hosting.Lifetime [Fatal] => db
+2022-11-25 23:15:33.9787 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Warn] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Error] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Fatal] => db
+2022-11-25 23:15:33.9787 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Warn] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Error] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Fatal] => db
+2022-11-25 23:15:33.9787 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Warn] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Error] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Fatal] => db
+2022-11-25 23:15:33.9787 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.BadRequests
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Warn] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Error] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Fatal] => db
+2022-11-25 23:15:33.9787 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Connections
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Warn] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Error] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Fatal] => db
+2022-11-25 23:15:33.9787 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Http2
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Warn] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Error] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Fatal] => db
+2022-11-25 23:15:33.9787 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Http3
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Warn] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Error] => db
+2022-11-25 23:15:33.9787 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Fatal] => db
+2022-11-25 23:15:34.0014 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Api
+2022-11-25 23:15:34.0014 Debug Logger CorgiShop.Api [Trace] => db
+2022-11-25 23:15:34.0014 Debug Logger CorgiShop.Api [Debug] => db
+2022-11-25 23:15:34.0014 Debug Logger CorgiShop.Api [Info] => db
+2022-11-25 23:15:34.0014 Debug Logger CorgiShop.Api [Warn] => db
+2022-11-25 23:15:34.0014 Debug Logger CorgiShop.Api [Error] => db
+2022-11-25 23:15:34.0014 Debug Logger CorgiShop.Api [Fatal] => db
+2022-11-25 23:15:34.0149 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware
+2022-11-25 23:15:34.0149 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Warn] => db
+2022-11-25 23:15:34.0149 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Error] => db
+2022-11-25 23:15:34.0149 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Fatal] => db
+2022-11-25 23:15:34.0149 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter
+2022-11-25 23:15:34.0149 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Warn] => db
+2022-11-25 23:15:34.0149 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Error] => db
+2022-11-25 23:15:34.0149 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Fatal] => db
+2022-11-25 23:15:34.0368 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider
+2022-11-25 23:15:34.0368 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Warn] => db
+2022-11-25 23:15:34.0368 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Error] => db
+2022-11-25 23:15:34.0368 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Fatal] => db
+2022-11-25 23:15:34.0368 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory
+2022-11-25 23:15:34.0368 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Warn] => db
+2022-11-25 23:15:34.0368 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Error] => db
+2022-11-25 23:15:34.0368 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Fatal] => db
+2022-11-25 23:15:34.0415 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder
+2022-11-25 23:15:34.0415 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Warn] => db
+2022-11-25 23:15:34.0415 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Error] => db
+2022-11-25 23:15:34.0415 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Fatal] => db
+2022-11-25 23:15:34.0415 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
+2022-11-25 23:15:34.0415 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Warn] => db
+2022-11-25 23:15:34.0415 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Error] => db
+2022-11-25 23:15:34.0415 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Fatal] => db
+2022-11-25 23:15:34.0745 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.TypeForwardingActivator
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Warn] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Error] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Fatal] => db
+2022-11-25 23:15:34.0745 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Warn] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Error] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Fatal] => db
+2022-11-25 23:15:34.0745 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Warn] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Error] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-25 23:15:34.0745 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Warn] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Error] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-25 23:15:34.0745 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Warn] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Error] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-25 23:15:34.0745 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Warn] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Error] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Fatal] => db
+2022-11-25 23:15:34.0745 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Warn] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Error] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Fatal] => db
+2022-11-25 23:15:34.0745 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Warn] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Error] => db
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Fatal] => db
+2022-11-25 23:15:34.0745 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider
+2022-11-25 23:15:34.0745 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Warn] => db
+2022-11-25 23:15:34.0882 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Error] => db
+2022-11-25 23:15:34.0882 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Fatal] => db
+2022-11-25 23:15:34.0882 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService
+2022-11-25 23:15:34.0882 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Warn] => db
+2022-11-25 23:15:34.0882 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Error] => db
+2022-11-25 23:15:34.0882 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Fatal] => db
+2022-11-25 23:15:34.0882 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Hosting.Diagnostics
+2022-11-25 23:15:34.0882 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Warn] => db
+2022-11-25 23:15:34.0882 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Error] => db
+2022-11-25 23:15:34.0882 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Fatal] => db
+2022-11-25 23:15:34.1062 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor
+2022-11-25 23:15:34.1062 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Warn] => db
+2022-11-25 23:15:34.1062 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Error] => db
+2022-11-25 23:15:34.1062 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Fatal] => db
+2022-11-25 23:15:34.1241 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.EndpointMiddleware
+2022-11-25 23:15:34.1241 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Warn] => db
+2022-11-25 23:15:34.1241 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Error] => db
+2022-11-25 23:15:34.1241 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Fatal] => db
+2022-11-25 23:15:34.1241 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware
+2022-11-25 23:15:34.1241 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Warn] => db
+2022-11-25 23:15:34.1241 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Error] => db
+2022-11-25 23:15:34.1241 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Fatal] => db
+2022-11-25 23:15:34.1241 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Api.Middleware.ExceptionMiddleware
+2022-11-25 23:15:34.1241 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Trace] => db
+2022-11-25 23:15:34.1241 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Debug] => db
+2022-11-25 23:15:34.1241 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Info] => db
+2022-11-25 23:15:34.1241 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Warn] => db
+2022-11-25 23:15:34.1241 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Error] => db
+2022-11-25 23:15:34.1241 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Fatal] => db
+2022-11-25 23:15:34.1373 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Warn] => db
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Error] => db
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Fatal] => db
+2022-11-25 23:15:34.1373 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Warn] => db
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Error] => db
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Fatal] => db
+2022-11-25 23:15:34.1373 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Warn] => db
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Error] => db
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Fatal] => db
+2022-11-25 23:15:34.1373 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Warn] => db
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Error] => db
+2022-11-25 23:15:34.1373 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Fatal] => db
+2022-11-25 23:15:34.1855 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets
+2022-11-25 23:15:34.1855 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Warn] => db
+2022-11-25 23:15:34.1855 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Error] => db
+2022-11-25 23:15:34.1855 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Fatal] => db
+2022-11-25 23:15:35.1536 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.Matching.DfaMatcher
+2022-11-25 23:15:35.1536 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Warn] => db
+2022-11-25 23:15:35.1536 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Error] => db
+2022-11-25 23:15:35.1536 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Fatal] => db
+2022-11-25 23:15:37.9839 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler
+2022-11-25 23:15:37.9839 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Warn] => db
+2022-11-25 23:15:37.9839 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Error] => db
+2022-11-25 23:15:37.9839 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Fatal] => db
+2022-11-25 23:15:38.0062 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter
+2022-11-25 23:15:38.0062 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Warn] => db
+2022-11-25 23:15:38.0062 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Error] => db
+2022-11-25 23:15:38.0062 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Fatal] => db
+2022-11-25 23:15:38.0062 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter
+2022-11-25 23:15:38.0062 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Warn] => db
+2022-11-25 23:15:38.0062 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Error] => db
+2022-11-25 23:15:38.0062 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Fatal] => db
+2022-11-25 23:15:38.0165 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder
+2022-11-25 23:15:38.0165 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Warn] => db
+2022-11-25 23:15:38.0165 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Error] => db
+2022-11-25 23:15:38.0165 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Fatal] => db
+2022-11-25 23:15:38.0165 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder
+2022-11-25 23:15:38.0165 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Warn] => db
+2022-11-25 23:15:38.0165 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Error] => db
+2022-11-25 23:15:38.0165 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Fatal] => db
+2022-11-25 23:15:38.0165 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder
+2022-11-25 23:15:38.0165 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder [Warn] => db
+2022-11-25 23:15:38.0165 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder [Error] => db
+2022-11-25 23:15:38.0165 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinder [Fatal] => db
+2022-11-25 23:15:38.0448 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Application.Middleware.LoggingBehavior
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Trace] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Debug] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Info] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Warn] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Error] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Fatal] => db
+2022-11-25 23:15:38.0448 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache
+2022-11-25 23:15:38.0448 Debug Logger Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache [Warn] => db
+2022-11-25 23:15:38.0448 Debug Logger Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache [Error] => db
+2022-11-25 23:15:38.0448 Debug Logger Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache [Fatal] => db
+2022-11-25 23:15:38.0448 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Application.Middleware.CachingBehavior
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Trace] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Debug] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Info] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Warn] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Error] => db
+2022-11-25 23:15:38.0448 Debug Logger CorgiShop.Application.Middleware.CachingBehavior [Fatal] => db
+2022-11-25 23:15:38.3982 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Infrastructure
+2022-11-25 23:15:38.3982 Debug Logger Microsoft.EntityFrameworkCore.Infrastructure [Warn] => db
+2022-11-25 23:15:38.3982 Debug Logger Microsoft.EntityFrameworkCore.Infrastructure [Error] => db
+2022-11-25 23:15:38.3982 Debug Logger Microsoft.EntityFrameworkCore.Infrastructure [Fatal] => db
+2022-11-25 23:15:38.4092 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Application.Caching.CachingService
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachingService [Trace] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachingService [Debug] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachingService [Info] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachingService [Warn] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachingService [Error] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachingService [Fatal] => db
+2022-11-25 23:15:38.4092 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Application.Caching.CachedProductRepository
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Trace] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Debug] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Info] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Warn] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Error] => db
+2022-11-25 23:15:38.4092 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Fatal] => db
+2022-11-25 23:15:38.4808 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector
+2022-11-25 23:15:38.4808 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector [Warn] => db
+2022-11-25 23:15:38.4808 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector [Error] => db
+2022-11-25 23:15:38.4808 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector [Fatal] => db
+2022-11-25 23:15:38.4808 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor
+2022-11-25 23:15:38.4808 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Warn] => db
+2022-11-25 23:15:38.4808 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Error] => db
+2022-11-25 23:15:38.4808 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Fatal] => db
+2022-11-25 23:34:29.1350 Info Message Template Auto Format enabled
+2022-11-25 23:34:29.1402 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-25 23:34:29.1923 Debug ScanAssembly('NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-11-25 23:34:29.2466 Debug Setting 'NLog.Targets.DatabaseTarget.name' to 'db'
+2022-11-25 23:34:29.2466 Debug Setting 'NLog.Targets.DatabaseTarget.connectionString' to '${configsetting:item=ConnectionStrings.WebApiDatabase}'
+2022-11-25 23:34:29.2466 Debug Setting 'NLog.Targets.DatabaseTarget.dbProvider' to 'Microsoft.Data.SqlClient.SqlConnection, Microsoft.Data.SqlClient'
+2022-11-25 23:34:29.2466 Debug Setting 'NLog.Targets.DatabaseTarget.commandType' to 'StoredProcedure'
+2022-11-25 23:34:29.2466 Debug Setting 'NLog.Targets.DatabaseTarget.commandText' to '[dbo].[AddLogEntry]'
+2022-11-25 23:34:29.2749 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@machineName'
+2022-11-25 23:34:29.2749 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${machinename}'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@logged'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${date}'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@level'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${level}'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@message'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${message}'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@logger'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${logger}'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@properties'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${all-event-properties:separator=|}'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@callsite'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${callsite}'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@exception'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${exception:tostring}'
+2022-11-25 23:34:29.2757 Debug Setting 'NLog.LayoutRenderers.ExceptionLayoutRenderer.Format' to 'tostring'
+2022-11-25 23:34:29.2757 Info Adding target DatabaseTarget(Name=db)
+2022-11-25 23:34:29.2757 Debug Registered target db: NLog.Targets.DatabaseTarget
+2022-11-25 23:34:29.2911 Debug Watching file-filter 'NLog.config' in directory: C:\Users\brand\Desktop\CorgiShop\CorgiShop.Api\bin\Debug\net7.0
+2022-11-25 23:34:29.2911 Debug --- NLog configuration dump ---
+2022-11-25 23:34:29.2911 Debug Targets:
+2022-11-25 23:34:29.2911 Debug DatabaseTarget(Name=db)
+2022-11-25 23:34:29.2911 Debug Rules:
+2022-11-25 23:34:29.2911 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info ] writeTo: [ ]
+2022-11-25 23:34:29.2911 Debug logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] writeTo: [ db ]
+2022-11-25 23:34:29.2911 Debug --- End of NLog configuration dump ---
+2022-11-25 23:34:29.2911 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\brand\Desktop\CorgiShop\CorgiShop.Api\bin\Debug\net7.0\NLog.config
+2022-11-25 23:34:29.2911 Debug Unused target checking is started... Rule Count: 2, Target Count: 1
+2022-11-25 23:34:29.2911 Debug Unused target checking is completed. Total Rule Count: 2, Total Target Count: 1, Unused Target Count: 0
+2022-11-25 23:34:29.3902 Info Configuration initialized.
+2022-11-25 23:34:29.3902 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.0.5.1426. Product version: 5.0.5+ace23d89ecf3dc2675648414a1f01ee9c1b2383d. GlobalAssemblyCache: False
+2022-11-25 23:34:29.3902 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Hosting.Internal.ApplicationLifetime
+2022-11-25 23:34:29.3902 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Warn] => db
+2022-11-25 23:34:29.3902 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Error] => db
+2022-11-25 23:34:29.3902 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Fatal] => db
+2022-11-25 23:34:29.3902 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Hosting.Internal.Host
+2022-11-25 23:34:29.3902 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Warn] => db
+2022-11-25 23:34:29.3902 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Error] => db
+2022-11-25 23:34:29.3902 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Fatal] => db
+2022-11-25 23:34:29.3902 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Hosting.Lifetime
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.Hosting.Lifetime [Warn] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.Hosting.Lifetime [Error] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.Hosting.Lifetime [Fatal] => db
+2022-11-25 23:34:29.4006 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Warn] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Error] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Fatal] => db
+2022-11-25 23:34:29.4006 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Warn] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Error] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Fatal] => db
+2022-11-25 23:34:29.4006 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Warn] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Error] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Fatal] => db
+2022-11-25 23:34:29.4006 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.BadRequests
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Warn] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Error] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Fatal] => db
+2022-11-25 23:34:29.4006 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Connections
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Warn] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Error] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Fatal] => db
+2022-11-25 23:34:29.4006 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Http2
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Warn] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Error] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Fatal] => db
+2022-11-25 23:34:29.4006 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Http3
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Warn] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Error] => db
+2022-11-25 23:34:29.4006 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Fatal] => db
+2022-11-25 23:34:29.4220 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Api
+2022-11-25 23:34:29.4220 Debug Logger CorgiShop.Api [Trace] => db
+2022-11-25 23:34:29.4220 Debug Logger CorgiShop.Api [Debug] => db
+2022-11-25 23:34:29.4220 Debug Logger CorgiShop.Api [Info] => db
+2022-11-25 23:34:29.4220 Debug Logger CorgiShop.Api [Warn] => db
+2022-11-25 23:34:29.4220 Debug Logger CorgiShop.Api [Error] => db
+2022-11-25 23:34:29.4220 Debug Logger CorgiShop.Api [Fatal] => db
+2022-11-25 23:34:29.4344 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware
+2022-11-25 23:34:29.4344 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Warn] => db
+2022-11-25 23:34:29.4344 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Error] => db
+2022-11-25 23:34:29.4344 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Fatal] => db
+2022-11-25 23:34:29.4344 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter
+2022-11-25 23:34:29.4344 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Warn] => db
+2022-11-25 23:34:29.4344 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Error] => db
+2022-11-25 23:34:29.4344 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Fatal] => db
+2022-11-25 23:34:29.4553 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Warn] => db
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Error] => db
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Fatal] => db
+2022-11-25 23:34:29.4553 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Warn] => db
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Error] => db
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Fatal] => db
+2022-11-25 23:34:29.4553 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Warn] => db
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Error] => db
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Fatal] => db
+2022-11-25 23:34:29.4553 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Warn] => db
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Error] => db
+2022-11-25 23:34:29.4553 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Fatal] => db
+2022-11-25 23:34:29.4975 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.TypeForwardingActivator
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Warn] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Error] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Fatal] => db
+2022-11-25 23:34:29.4975 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Warn] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Error] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Fatal] => db
+2022-11-25 23:34:29.4975 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Warn] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Error] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-25 23:34:29.4975 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Warn] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Error] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-25 23:34:29.4975 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Warn] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Error] => db
+2022-11-25 23:34:29.4975 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-25 23:34:29.5105 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Warn] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Error] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Fatal] => db
+2022-11-25 23:34:29.5105 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Warn] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Error] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Fatal] => db
+2022-11-25 23:34:29.5105 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Warn] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Error] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Fatal] => db
+2022-11-25 23:34:29.5105 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Warn] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Error] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Fatal] => db
+2022-11-25 23:34:29.5105 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Warn] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Error] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Fatal] => db
+2022-11-25 23:34:29.5105 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Hosting.Diagnostics
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Warn] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Error] => db
+2022-11-25 23:34:29.5105 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Fatal] => db
+2022-11-25 23:34:29.5330 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor
+2022-11-25 23:34:29.5330 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Warn] => db
+2022-11-25 23:34:29.5330 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Error] => db
+2022-11-25 23:34:29.5330 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Fatal] => db
+2022-11-25 23:34:29.5517 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.EndpointMiddleware
+2022-11-25 23:34:29.5517 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Warn] => db
+2022-11-25 23:34:29.5517 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Error] => db
+2022-11-25 23:34:29.5517 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Fatal] => db
+2022-11-25 23:34:29.5517 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware
+2022-11-25 23:34:29.5517 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Warn] => db
+2022-11-25 23:34:29.5517 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Error] => db
+2022-11-25 23:34:29.5517 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Fatal] => db
+2022-11-25 23:34:29.5517 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Api.Middleware.ExceptionMiddleware
+2022-11-25 23:34:29.5517 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Trace] => db
+2022-11-25 23:34:29.5517 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Debug] => db
+2022-11-25 23:34:29.5517 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Info] => db
+2022-11-25 23:34:29.5517 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Warn] => db
+2022-11-25 23:34:29.5517 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Error] => db
+2022-11-25 23:34:29.5517 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Fatal] => db
+2022-11-25 23:34:29.5634 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware
+2022-11-25 23:34:29.5634 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Warn] => db
+2022-11-25 23:34:29.5634 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Error] => db
+2022-11-25 23:34:29.5634 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Fatal] => db
+2022-11-25 23:34:29.5634 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware
+2022-11-25 23:34:29.5634 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Warn] => db
+2022-11-25 23:34:29.5634 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Error] => db
+2022-11-25 23:34:29.5634 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Fatal] => db
+2022-11-25 23:34:29.5634 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware
+2022-11-25 23:34:29.5634 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Warn] => db
+2022-11-25 23:34:29.5725 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Error] => db
+2022-11-25 23:34:29.5725 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Fatal] => db
+2022-11-25 23:34:29.5725 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware
+2022-11-25 23:34:29.5725 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Warn] => db
+2022-11-25 23:34:29.5725 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Error] => db
+2022-11-25 23:34:29.5725 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Fatal] => db
+2022-11-25 23:34:29.6167 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets
+2022-11-25 23:34:29.6167 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Warn] => db
+2022-11-25 23:34:29.6167 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Error] => db
+2022-11-25 23:34:29.6167 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Fatal] => db
+2022-11-25 23:34:30.4013 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.Matching.DfaMatcher
+2022-11-25 23:34:30.4013 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Warn] => db
+2022-11-25 23:34:30.4013 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Error] => db
+2022-11-25 23:34:30.4013 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Fatal] => db
+2022-11-25 23:34:34.6598 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler
+2022-11-25 23:34:34.6598 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Warn] => db
+2022-11-25 23:34:34.6598 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Error] => db
+2022-11-25 23:34:34.6598 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Fatal] => db
+2022-11-25 23:34:34.7545 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter
+2022-11-25 23:34:34.7545 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Warn] => db
+2022-11-25 23:34:34.7545 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Error] => db
+2022-11-25 23:34:34.7545 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Fatal] => db
+2022-11-25 23:34:34.7545 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter
+2022-11-25 23:34:34.7545 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Warn] => db
+2022-11-25 23:34:34.7545 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Error] => db
+2022-11-25 23:34:34.7545 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Fatal] => db
+2022-11-25 23:34:34.7648 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder
+2022-11-25 23:34:34.7648 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Warn] => db
+2022-11-25 23:34:34.7648 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Error] => db
+2022-11-25 23:34:34.7648 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Fatal] => db
+2022-11-25 23:34:34.7648 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder
+2022-11-25 23:34:34.7648 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Warn] => db
+2022-11-25 23:34:34.7648 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Error] => db
+2022-11-25 23:34:34.7648 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Fatal] => db
+2022-11-25 23:35:03.6893 Info Message Template Auto Format enabled
+2022-11-25 23:35:03.6893 Info Loading assembly: NLog.Web.AspNetCore
+2022-11-25 23:35:03.7009 Debug ScanAssembly('NLog.Web.AspNetCore, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2022-11-25 23:35:03.7214 Debug Setting 'NLog.Targets.DatabaseTarget.name' to 'db'
+2022-11-25 23:35:03.7214 Debug Setting 'NLog.Targets.DatabaseTarget.connectionString' to '${configsetting:item=ConnectionStrings.WebApiDatabase}'
+2022-11-25 23:35:03.7214 Debug Setting 'NLog.Targets.DatabaseTarget.dbProvider' to 'Microsoft.Data.SqlClient.SqlConnection, Microsoft.Data.SqlClient'
+2022-11-25 23:35:03.7214 Debug Setting 'NLog.Targets.DatabaseTarget.commandType' to 'StoredProcedure'
+2022-11-25 23:35:03.7214 Debug Setting 'NLog.Targets.DatabaseTarget.commandText' to '[dbo].[AddLogEntry]'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@machineName'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${machinename}'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@logged'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${date}'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@level'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${level}'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@message'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${message}'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@logger'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${logger}'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@properties'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${all-event-properties:separator=|}'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@callsite'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${callsite}'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.name' to '@exception'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.Targets.DatabaseParameterInfo.layout' to '${exception:tostring}'
+2022-11-25 23:35:03.7509 Debug Setting 'NLog.LayoutRenderers.ExceptionLayoutRenderer.Format' to 'tostring'
+2022-11-25 23:35:03.7606 Info Adding target DatabaseTarget(Name=db)
+2022-11-25 23:35:03.7606 Debug Registered target db: NLog.Targets.DatabaseTarget
+2022-11-25 23:35:03.7606 Debug Watching file-filter 'NLog.config' in directory: C:\Users\brand\Desktop\CorgiShop\CorgiShop.Api\bin\Debug\net7.0
+2022-11-25 23:35:03.7606 Debug --- NLog configuration dump ---
+2022-11-25 23:35:03.7606 Debug Targets:
+2022-11-25 23:35:03.7606 Debug DatabaseTarget(Name=db)
+2022-11-25 23:35:03.7606 Debug Rules:
+2022-11-25 23:35:03.7606 Debug logNamePattern: (Microsoft.:StartsWith) levels: [ Trace Debug Info ] writeTo: [ ]
+2022-11-25 23:35:03.7606 Debug logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] writeTo: [ db ]
+2022-11-25 23:35:03.7606 Debug --- End of NLog configuration dump ---
+2022-11-25 23:35:03.7606 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\brand\Desktop\CorgiShop\CorgiShop.Api\bin\Debug\net7.0\NLog.config
+2022-11-25 23:35:03.7606 Debug Unused target checking is started... Rule Count: 2, Target Count: 1
+2022-11-25 23:35:03.7606 Debug Unused target checking is completed. Total Rule Count: 2, Total Target Count: 1, Unused Target Count: 0
+2022-11-25 23:35:03.7984 Info Configuration initialized.
+2022-11-25 23:35:03.7984 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.0.5.1426. Product version: 5.0.5+ace23d89ecf3dc2675648414a1f01ee9c1b2383d. GlobalAssemblyCache: False
+2022-11-25 23:35:03.7984 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Hosting.Internal.ApplicationLifetime
+2022-11-25 23:35:03.7984 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Warn] => db
+2022-11-25 23:35:03.7984 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Error] => db
+2022-11-25 23:35:03.7984 Debug Logger Microsoft.Extensions.Hosting.Internal.ApplicationLifetime [Fatal] => db
+2022-11-25 23:35:03.8071 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Hosting.Internal.Host
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Warn] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Error] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.Extensions.Hosting.Internal.Host [Fatal] => db
+2022-11-25 23:35:03.8071 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Hosting.Lifetime
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.Hosting.Lifetime [Warn] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.Hosting.Lifetime [Error] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.Hosting.Lifetime [Fatal] => db
+2022-11-25 23:35:03.8071 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Warn] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Error] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer [Fatal] => db
+2022-11-25 23:35:03.8071 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Warn] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Error] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware [Fatal] => db
+2022-11-25 23:35:03.8071 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Warn] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Error] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel [Fatal] => db
+2022-11-25 23:35:03.8071 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.BadRequests
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Warn] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Error] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.BadRequests [Fatal] => db
+2022-11-25 23:35:03.8071 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Connections
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Warn] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Error] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Connections [Fatal] => db
+2022-11-25 23:35:03.8071 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Http2
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Warn] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Error] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http2 [Fatal] => db
+2022-11-25 23:35:03.8071 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Http3
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Warn] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Error] => db
+2022-11-25 23:35:03.8071 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Http3 [Fatal] => db
+2022-11-25 23:35:03.8262 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Api
+2022-11-25 23:35:03.8262 Debug Logger CorgiShop.Api [Trace] => db
+2022-11-25 23:35:03.8262 Debug Logger CorgiShop.Api [Debug] => db
+2022-11-25 23:35:03.8262 Debug Logger CorgiShop.Api [Info] => db
+2022-11-25 23:35:03.8262 Debug Logger CorgiShop.Api [Warn] => db
+2022-11-25 23:35:03.8262 Debug Logger CorgiShop.Api [Error] => db
+2022-11-25 23:35:03.8262 Debug Logger CorgiShop.Api [Fatal] => db
+2022-11-25 23:35:03.8262 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware
+2022-11-25 23:35:03.8262 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Warn] => db
+2022-11-25 23:35:03.8379 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Error] => db
+2022-11-25 23:35:03.8379 Debug Logger Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware [Fatal] => db
+2022-11-25 23:35:03.8379 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter
+2022-11-25 23:35:03.8379 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Warn] => db
+2022-11-25 23:35:03.8379 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Error] => db
+2022-11-25 23:35:03.8379 Debug Logger Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter [Fatal] => db
+2022-11-25 23:35:03.8588 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Warn] => db
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Error] => db
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultActionDescriptorCollectionProvider [Fatal] => db
+2022-11-25 23:35:03.8588 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Warn] => db
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Error] => db
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory [Fatal] => db
+2022-11-25 23:35:03.8588 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Warn] => db
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Error] => db
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder [Fatal] => db
+2022-11-25 23:35:03.8588 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Warn] => db
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Error] => db
+2022-11-25 23:35:03.8588 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker [Fatal] => db
+2022-11-25 23:35:03.8935 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.TypeForwardingActivator
+2022-11-25 23:35:03.8935 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Warn] => db
+2022-11-25 23:35:03.8935 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Error] => db
+2022-11-25 23:35:03.8935 Debug Logger Microsoft.AspNetCore.DataProtection.TypeForwardingActivator [Fatal] => db
+2022-11-25 23:35:03.8935 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager
+2022-11-25 23:35:03.8935 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Warn] => db
+2022-11-25 23:35:03.8935 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Error] => db
+2022-11-25 23:35:03.8935 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager [Fatal] => db
+2022-11-25 23:35:03.8935 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory
+2022-11-25 23:35:03.8935 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Warn] => db
+2022-11-25 23:35:03.8935 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Error] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngGcmAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-25 23:35:03.9005 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Warn] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Error] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.CngCbcAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-25 23:35:03.9005 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Warn] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Error] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ManagedAuthenticatedEncryptorFactory [Fatal] => db
+2022-11-25 23:35:03.9005 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Warn] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Error] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlEncryptor [Fatal] => db
+2022-11-25 23:35:03.9005 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Warn] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Error] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository [Fatal] => db
+2022-11-25 23:35:03.9005 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Warn] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Error] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.DefaultKeyResolver [Fatal] => db
+2022-11-25 23:35:03.9005 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Warn] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Error] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.KeyManagement.KeyRingProvider [Fatal] => db
+2022-11-25 23:35:03.9005 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Warn] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Error] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.DataProtection.Internal.DataProtectionHostedService [Fatal] => db
+2022-11-25 23:35:03.9005 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Hosting.Diagnostics
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Warn] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Error] => db
+2022-11-25 23:35:03.9005 Debug Logger Microsoft.AspNetCore.Hosting.Diagnostics [Fatal] => db
+2022-11-25 23:35:03.9279 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor
+2022-11-25 23:35:03.9279 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Warn] => db
+2022-11-25 23:35:03.9279 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Error] => db
+2022-11-25 23:35:03.9279 Debug Logger Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor [Fatal] => db
+2022-11-25 23:35:03.9533 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.EndpointMiddleware
+2022-11-25 23:35:03.9533 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Warn] => db
+2022-11-25 23:35:03.9533 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Error] => db
+2022-11-25 23:35:03.9533 Debug Logger Microsoft.AspNetCore.Routing.EndpointMiddleware [Fatal] => db
+2022-11-25 23:35:03.9533 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware
+2022-11-25 23:35:03.9533 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Warn] => db
+2022-11-25 23:35:03.9533 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Error] => db
+2022-11-25 23:35:03.9533 Debug Logger Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware [Fatal] => db
+2022-11-25 23:35:03.9533 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Api.Middleware.ExceptionMiddleware
+2022-11-25 23:35:03.9533 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Trace] => db
+2022-11-25 23:35:03.9533 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Debug] => db
+2022-11-25 23:35:03.9533 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Info] => db
+2022-11-25 23:35:03.9533 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Warn] => db
+2022-11-25 23:35:03.9533 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Error] => db
+2022-11-25 23:35:03.9533 Debug Logger CorgiShop.Api.Middleware.ExceptionMiddleware [Fatal] => db
+2022-11-25 23:35:03.9665 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Warn] => db
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Error] => db
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware [Fatal] => db
+2022-11-25 23:35:03.9665 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Warn] => db
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Error] => db
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware [Fatal] => db
+2022-11-25 23:35:03.9665 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Warn] => db
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Error] => db
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware [Fatal] => db
+2022-11-25 23:35:03.9665 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Warn] => db
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Error] => db
+2022-11-25 23:35:03.9665 Debug Logger Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware [Fatal] => db
+2022-11-25 23:35:04.0199 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets
+2022-11-25 23:35:04.0199 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Warn] => db
+2022-11-25 23:35:04.0199 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Error] => db
+2022-11-25 23:35:04.0199 Debug Logger Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets [Fatal] => db
+2022-11-25 23:35:04.5160 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Routing.Matching.DfaMatcher
+2022-11-25 23:35:04.5160 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Warn] => db
+2022-11-25 23:35:04.5160 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Error] => db
+2022-11-25 23:35:04.5160 Debug Logger Microsoft.AspNetCore.Routing.Matching.DfaMatcher [Fatal] => db
+2022-11-25 23:35:07.5514 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler
+2022-11-25 23:35:07.5514 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Warn] => db
+2022-11-25 23:35:07.5514 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Error] => db
+2022-11-25 23:35:07.5514 Debug Logger Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler [Fatal] => db
+2022-11-25 23:35:07.5733 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter
+2022-11-25 23:35:07.5733 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Warn] => db
+2022-11-25 23:35:07.5733 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Error] => db
+2022-11-25 23:35:07.5733 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter [Fatal] => db
+2022-11-25 23:35:07.5733 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter
+2022-11-25 23:35:07.5733 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Warn] => db
+2022-11-25 23:35:07.5733 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Error] => db
+2022-11-25 23:35:07.5733 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter [Fatal] => db
+2022-11-25 23:35:07.5733 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder
+2022-11-25 23:35:07.5733 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Warn] => db
+2022-11-25 23:35:07.5733 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Error] => db
+2022-11-25 23:35:07.5733 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinder [Fatal] => db
+2022-11-25 23:35:07.5897 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder
+2022-11-25 23:35:07.5897 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Warn] => db
+2022-11-25 23:35:07.5897 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Error] => db
+2022-11-25 23:35:07.5897 Debug Logger Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinder [Fatal] => db
+2022-11-25 23:35:07.6145 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Application.Middleware.LoggingBehavior
+2022-11-25 23:35:07.6145 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Trace] => db
+2022-11-25 23:35:07.6145 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Debug] => db
+2022-11-25 23:35:07.6145 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Info] => db
+2022-11-25 23:35:07.6145 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Warn] => db
+2022-11-25 23:35:07.6145 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Error] => db
+2022-11-25 23:35:07.6145 Debug Logger CorgiShop.Application.Middleware.LoggingBehavior [Fatal] => db
+2022-11-25 23:35:07.9851 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.EntityFrameworkCore.Infrastructure
+2022-11-25 23:35:07.9851 Debug Logger Microsoft.EntityFrameworkCore.Infrastructure [Warn] => db
+2022-11-25 23:35:07.9851 Debug Logger Microsoft.EntityFrameworkCore.Infrastructure [Error] => db
+2022-11-25 23:35:07.9851 Debug Logger Microsoft.EntityFrameworkCore.Infrastructure [Fatal] => db
+2022-11-25 23:35:07.9960 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache
+2022-11-25 23:35:07.9960 Debug Logger Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache [Warn] => db
+2022-11-25 23:35:07.9960 Debug Logger Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache [Error] => db
+2022-11-25 23:35:07.9960 Debug Logger Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache [Fatal] => db
+2022-11-25 23:35:07.9960 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Application.Caching.CachingService
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachingService [Trace] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachingService [Debug] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachingService [Info] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachingService [Warn] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachingService [Error] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachingService [Fatal] => db
+2022-11-25 23:35:07.9960 Debug Targets configured when LogLevel >= Trace for Logger: CorgiShop.Application.Caching.CachedProductRepository
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Trace] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Debug] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Info] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Warn] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Error] => db
+2022-11-25 23:35:07.9960 Debug Logger CorgiShop.Application.Caching.CachedProductRepository [Fatal] => db
+2022-11-25 23:35:08.2469 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector
+2022-11-25 23:35:08.2469 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector [Warn] => db
+2022-11-25 23:35:08.2469 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector [Error] => db
+2022-11-25 23:35:08.2469 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector [Fatal] => db
+2022-11-25 23:35:08.2469 Debug Targets configured when LogLevel >= Warn for Logger: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor
+2022-11-25 23:35:08.2469 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Warn] => db
+2022-11-25 23:35:08.2469 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Error] => db
+2022-11-25 23:35:08.2469 Debug Logger Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor [Fatal] => db

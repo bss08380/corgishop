@@ -3,10 +3,11 @@ using CorgiShop.Application.Abstractions;
 using CorgiShop.Application.CQRS.Base;
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain.Abstractions;
+using MediatR;
 
 namespace CorgiShop.Application.Base;
 
-public abstract class GetListPaginatedQueryHandlerBase<TDto, TRepo>
+public class GetListPaginatedQueryHandler<TDto, TRepo> : IRequestHandler<GetListPaginatedQuery<TDto>, PaginatedResultsDto<TDto>>
     where TDto : class, IDtoEntity 
     where TRepo : class, IRepositoryEntity
 {
@@ -14,7 +15,7 @@ public abstract class GetListPaginatedQueryHandlerBase<TDto, TRepo>
     private readonly IMapper _mapper;
     private readonly int _maxPageSizeLimit = 0;
 
-    public GetListPaginatedQueryHandlerBase(
+    public GetListPaginatedQueryHandler(
         IRepository<TRepo> repository,
         IMapper mapper,
         int maxPageSizeLimit = 200)
@@ -24,7 +25,7 @@ public abstract class GetListPaginatedQueryHandlerBase<TDto, TRepo>
         _maxPageSizeLimit = maxPageSizeLimit;
     }
 
-    public async Task<PaginatedResultsDto<TDto>> Handle(GetListPaginatedQueryBase<TDto> request, CancellationToken cancellationToken)
+    public async Task<PaginatedResultsDto<TDto>> Handle(GetListPaginatedQuery<TDto> request, CancellationToken cancellationToken)
     {
         if (request.Limit > _maxPageSizeLimit) throw DetailedException.FromFailedVerification(nameof(request.Limit), $"Maximum limit size is {_maxPageSizeLimit}");
 

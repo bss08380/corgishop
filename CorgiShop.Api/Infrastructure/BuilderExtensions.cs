@@ -1,6 +1,8 @@
 ﻿using CorgiShop.Api.Authorization;
+using CorgiShop.Application.Abstractions;
 using CorgiShop.Application.Base;
 using CorgiShop.Application.Caching;
+using CorgiShop.Application.CQRS.Base;
 using CorgiShop.Application.Features.Products;
 using CorgiShop.Application.Features.Products.Queries.GetProducts;
 using CorgiShop.Application.Middleware;
@@ -13,9 +15,11 @@ using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NLog.Extensions.Logging;
+using NLog.Filters;
 using System.Reflection;
 
 namespace CorgiShop.Api.Infrastructure;
@@ -82,7 +86,14 @@ public static class BuilderExtensions
         builder.Services.AddMediatR(typeof(Program).Assembly);
         builder.Services.AddMediatR(typeof(GetProductsListPaginatedQuery).Assembly);
 
-        //builder.Services.AddTransient(typeof(IRequestHandler<GetListPaginatedQuery<ProductDto>, GetListPaginatedDto<ProductDto>>), typeof(GetListPaginatedQueryHandler<ProductDto,Product>));
+        builder.Services.AddCrudPipeline<ProductDto, Product>();
+    }
+
+    public static void AddCrudPipeline<TDto, TRepo>(this IServiceCollection services)
+        where TDto: class, IDtoEntity
+        where TRepo : class, IRepositoryEntity
+    {
+        services.AddTransient<IRequestHandler<GetListPaginatedQuery<TDto>, PaginatedResultsDto<TDto>>, GetListPaginatedQueryHandler<TDto, TRepo>>();
     }
 
     public static void ConfigureCorgiShopServices(this WebApplicationBuilder builder)
@@ -93,13 +104,28 @@ public static class BuilderExtensions
 
         builder.Services.AddScoped<ICachingService, CachingService>();
 
-        builder.Services.AddScoped<IRepository<Product>, ProductRepository>();
-        builder.Services.Decorate<IRepository<Product>, CachedProductRepository>();
-
-        builder.Services.AddScoped<IProductRepository, ProductRepository>();
-        builder.Services.Decorate<IProductRepository, CachedProductRepository>();
+        builder.Services.AddEntityRepository<Product, IProductRepository, ProductRepository>();
+        builder.Services.DecorateEntityRepository<Product, IProductRepository, CachedProductRepository>();
 
         builder.Services.AddTransient<IProductDataGenService, ProductDataGenService>();
+    }
+
+    public static void AddEntityRepository<TEntity, TRepositoryInterface, TRepositoryImplementation>(this IServiceCollection services)
+        where TRepositoryInterface : class, IRepository<TEntity>
+        where TRepositoryImplementation : class, TRepositoryInterface
+        where TEntity : class, IRepositoryEntity
+    {
+        services.AddTransient<IRepository<TEntity>, TRepositoryImplementation>();
+        services.AddTransient<TRepositoryInterface, TRepositoryImplementation>();
+    }
+
+    public static void DecorateEntityRepository<TEntity, TRepositoryInterface, TRepositoryDecorator>(this IServiceCollection services)
+        where TRepositoryInterface : class, IRepository<TEntity>
+        where TRepositoryDecorator : class, TRepositoryInterface
+        where TEntity : class, IRepositoryEntity
+    {
+        services.Decorate<IRepository<TEntity>, TRepositoryDecorator>();
+        services.Decorate<TRepositoryInterface, TRepositoryDecorator>();
     }
 
     public static void ConfigureWebServices(this WebApplicationBuilder builder)

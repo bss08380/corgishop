@@ -2,7 +2,6 @@
 using CorgiShop.Application.Features.Products;
 using CorgiShop.Application.Features.Products.Commands.GenerateProducts;
 using CorgiShop.Application.Features.Products.Queries.GetProducts;
-using CorgiShop.Domain.Model;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,13 +20,9 @@ public class ProductsController : CrudControllerBase<ProductDto>
         _mediator = sender;
     }
 
-    [HttpGet]
-    public async Task<ActionResult> Get([FromQuery] GetProductsListPaginatedQuery query) => await base.CrudGet(query);
-
     /// <summary>
     /// Generates the provided number of fake corgi-themed products to be added for sale in the CorgiShop
     /// </summary>
-    /// <returns>Paginated product data, including page information</returns>
     /// <response code="200">If the generation operation completed successfully</response>
     [HttpPost("generate")]
     [ProducesResponseType(StatusCodes.Status200OK)]

@@ -7,7 +7,7 @@ using MediatR;
 
 namespace CorgiShop.Application.Features.Products.Queries.GetProducts;
 
-public class GetProductsListPaginatedQueryHandler : GetListPaginatedQueryHandlerBase<ProductDto, Product>, IRequestHandler<GetProductsListPaginatedQuery, PaginatedResultsDto<ProductDto>>
+public class GetProductsListPaginatedQueryHandler : GetListPaginatedQueryHandler<ProductDto, Product>, IRequestHandler<GetProductsListPaginatedQuery, PaginatedResultsDto<ProductDto>>
 {
     public GetProductsListPaginatedQueryHandler(
         IProductRepository productRepository,
