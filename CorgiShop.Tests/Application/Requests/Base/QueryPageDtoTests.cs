@@ -1,4 +1,4 @@
-﻿using CorgiShop.Application.CQRS.Base;
+﻿using CorgiShop.Pipeline.Base;
 
 namespace CorgiShop.Tests.Application.Requests.Base;
 

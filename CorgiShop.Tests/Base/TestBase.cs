@@ -1,26 +1,34 @@
-﻿using AutoMapper;
-using CorgiShop.Domain;
-using CorgiShop.Domain.Model;
+﻿using CorgiShop.Domain.Model;
 using Microsoft.EntityFrameworkCore;
-using Moq;
 
 namespace CorgiShop.Tests.Base;
 
 public abstract class TestBase
 {
-    protected CorgiShopDbContext? DbContext { get; private set; }
+    protected UnitTestDbContext? UnitTestDbContext { get; private set; }
+
+    protected CorgiShopDbContext? CorgiShopDbContext { get; private set; }
 
     public TestBase()
     {
     }
 
+    protected async Task<UnitTestDbContext> RigUnitTestDbContext(Action<UnitTestDbContext> loadAction)
+    {
+        var dbOptions = new DbContextOptionsBuilder<UnitTestDbContext>().UseInMemoryDatabase(databaseName: $"UnitTestDbContext_{Guid.NewGuid()}").Options;
+        UnitTestDbContext = new UnitTestDbContext(dbOptions);
+        loadAction(UnitTestDbContext);
+        await UnitTestDbContext.SaveChangesAsync();
+        return UnitTestDbContext;
+    }
+
     protected async Task<CorgiShopDbContext> RigCorgiShopDbContext(Action<CorgiShopDbContext> loadAction)
     {
-        var dbOptions = new DbContextOptionsBuilder<CorgiShopDbContext>().UseInMemoryDatabase(databaseName: $"CorgiShopFauxDb_{Guid.NewGuid()}").Options;
-        DbContext = new CorgiShopDbContext(dbOptions);
-        loadAction(DbContext);
-        await DbContext.SaveChangesAsync();
-        return DbContext;
+        var dbOptions = new DbContextOptionsBuilder<CorgiShopDbContext>().UseInMemoryDatabase(databaseName: $"UnitTestDbContext_{Guid.NewGuid()}").Options;
+        CorgiShopDbContext = new CorgiShopDbContext(dbOptions);
+        loadAction(CorgiShopDbContext);
+        await CorgiShopDbContext.SaveChangesAsync();
+        return CorgiShopDbContext;
     }
 
 }

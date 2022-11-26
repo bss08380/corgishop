@@ -1,8 +1,5 @@
 ﻿using CorgiShop.Api.Controllers;
-using CorgiShop.Application.CQRS.Base;
-using CorgiShop.Application.Features.Products.Commands.DeleteProduct;
 using CorgiShop.Application.Features.Products.Commands.GenerateProducts;
-using CorgiShop.Application.Features.Products.Queries.GetProducts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -13,7 +10,7 @@ public class ProductsControllerTests
 {
     private Mock<ISender> MockSender = new Mock<ISender>();
 
-    /*
+    
     [Fact]
     public async Task Generate_CommandSent()
     {
@@ -29,6 +26,7 @@ public class ProductsControllerTests
         MockSender.Verify(s => s.Send(cmd, default));
     }
 
+    /*
     [Fact]
     public async Task Get_CommandSent()
     {
@@ -62,6 +60,7 @@ public class ProductsControllerTests
 
     private ProductsController GetUut()
     {
+        /*
         var getProductsReturn = new GetProductsListPaginatedDto()
         {
             Page = new QueryPageDto()
@@ -79,6 +78,7 @@ public class ProductsControllerTests
         };
 
         MockSender.Setup(s => s.Send(It.IsAny<GetProductsListPaginatedQuery>(), default)).ReturnsAsync(getProductsReturn);
+        */
         return new ProductsController(MockSender.Object);
     }
 
