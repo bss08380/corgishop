@@ -95,46 +95,58 @@ The caching layer makes use of the "Decorator Pattern," which, in this case, is 
 
 A combination of standard DI and a NuGet package called Scrutor make this a lot easier to do - otherwise I would need to have a quasi-factory which (when a service requires an `IProductRepository` first constructs the instance of `ProductRepository`, and then injects that into an instance of `CachedProductRepository`. I did indeed do this at first, saw how ugly it was, wrote my own generic abstraction methods, but then moved to Scrutor so that I could cut down on the amount of strange, hard to test code!
 
+Note that when using the generic CRUD pipeline (described in the section below), the caching repository must be added via the `DecorateCrudPipeline<,,>` extension method, rather than the typical Scrutor `Decorate` method.
+
 Why go through all of this? To make it simple to expand the number of repositories, and in this case, the number of cached repositories. The majority of transactions through the API are going to be CRUD and the generic interfaces/base classes provide a single implementation to rely on regardless of the number of different kinds of entities are introduced into the domain. More importantly, in my opinion, it DRASTICALLY cuts down on unit testing. With this implementation, a single file of tests can lock down the basic CRUD stuff and I never have to worry about testing that again.
 
 ## Base Implementations of Controllers and Commands/Handlers
 
-All CRUD operations are handled in a series of abstract base classes that span from the Controller level (i.e. `CrudController`) to the Mediatr request level (i.e. `GetListPaginatedQuery/Handler<,>`). These base classes provided all necessary logic to allow for basic CRUD operations. Generics are used extensively to put all of this in place.
+All (basic) CRUD operations are handled in a series of base classes that span from the Controller level (`CrudController<>`), to the Mediatr request level (i.e. `GetListPaginatedQuery/Handler<,>`), and on down to the generic `IRepository<>` implementations. These base classes provided all necessary logic to allow for basic CRUD operations.
 
 An specific Controller (for example, the `ProductController`), can then be focused on behavior that is specific to Products, and not simply another implementation of CRUD. See the below example. `ProductController` has the basic CRUD operations abstracted from it, and must only worry about a Product-specific endpoint to generate fake products.
 
 ```
-public class GetProductsListPaginatedQueryHandler : GetListPaginatedQueryHandler<ProductDto, Product>
+[ApiController]
+[Route("[controller]")]
+[Produces("application/json")]
+public class ProductsController : CrudControllerBase<ProductDto>
 {
-    public GetProductsListPaginatedQueryHandler(
-        IProductRepository productRepository,
-        IMapper mapper)
-        : base(productRepository, mapper)
+    private readonly ISender _mediator;
+
+    public ProductsController(ISender sender)
+        : base(sender)
     {
+        _mediator = sender;
+    }
+
+    /// <summary>
+    /// Generates the provided number of fake corgi-themed products to be added for sale in the CorgiShop
+    /// </summary>
+    /// <response code="200">If the generation operation completed successfully</response>
+    [HttpPost("generate")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult> Generate([FromQuery] GenerateProductsCommand command)
+    {
+        await _mediator.Send(command);
+        return Ok();
     }
 }
 ```
 
-Furthermore, `IRequest` implementations and their handlers also have associated base classes to derive from. Entity-specific actions (like generating products) will continue to be their own set of fully implemented requests and handlers, while common crud operations are relegated to having a paper-thin derived class necessary to have around only for DI purposes:
+Furthermore, `IRequest` implementations and their handlers also have associated base classes to derive from. Entity-specific actions (like generating products) will continue to be their own set of fully implemented requests and handlers.
 
-```
-public class GetProductsListPaginatedQueryHandler : GetListPaginatedQueryHandler<ProductDto, Product>
-{
-    public GetProductsListPaginatedQueryHandler(
-        IProductRepository productRepository,
-        IMapper mapper)
-        : base(productRepository, mapper)
-    {
-    }
-}
-```
+The logic to put all of this in place, including the abstractions, is located in the CorgiShop.Pipeline project. The general implementation process to use this pipeline is:
 
-As alluded to above, the wrapper/drived classes (like the one above) are necessary for DI. I don't at this time want to add in a different DI engine (like Autofac, for example), which may or may not allow for a more nuanced implementation of this generic pipeline from Controller down to Repository.
+1. Create new entity which derives from `IRepositoryEntity` and DTO which implements `IDtoEntity`
+2. Add entity to CorgiShopDbContext
+3. Create repository class which implements IRepository<TNewEntity>
+4. Link it up by calling the extension method `AddCrudPipeline<,,,>`
+5. Optionally add caching layer into the mix by calling `DecorateCrudPipeline<,,>`
+6. Create a new controller and derive from `CrudController<TDto>`
 
-Specifics of this challengs are:
+That is a lot of steps but the tradeoff is exactly NO duplicate CRUD code in the application (or at least that's the goal - this is a learning/testing application after all).
 
-- Injecting the correct Repository into the handler relying only on generics (given that repositories may, or will likely have, actual derived types - like ProductRepository - and I don't want to register them twice or burden a future developer with remembering this odd behavior)
-- Handler requires two generic types the Dto type, and the Domain type (IDtoEntity and IRepositoryEntity respectively) and thus does not map perfectly to the query only having one type. I don't want the queries to need to 
+Potential improvements to this approach abound, of course. The number of generic arguments passed into the DI/linking extension methods is a bit...high. Furthermore, learning and knowing how to use this having not written it would likely provide a headache for a new developer on the project. *At the end of the day, this is NOT a real-world enterprise application - this is a demo/learning playground used for testing out cool new architectures and design paradigms.* If I were using an approach like this in an enterprise application, I would likely stop at a generic Domain layer, rather than taking it all the way to the API layer, and then have a few base types to help with a bit of generic CRUD action, if I could. MediatR makes using generics at all in the pipeline a bit of a headache.
 
 ## Troubleshooting
 
