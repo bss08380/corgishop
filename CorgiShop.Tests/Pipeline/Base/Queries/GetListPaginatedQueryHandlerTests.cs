@@ -2,7 +2,8 @@
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Domain.Model;
 using CorgiShop.Pipeline.Abstractions;
-using CorgiShop.Pipeline.Base;
+using CorgiShop.Pipeline.Base.Handlers;
+using CorgiShop.Pipeline.Base.Requests;
 using CorgiShop.Tests.Base;
 using Moq;
 

@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Pipeline.Abstractions;
+using CorgiShop.Pipeline.Base.Requests;
 using MediatR;
 
-namespace CorgiShop.Pipeline.Base;
+namespace CorgiShop.Pipeline.Base.Handlers;
 
 public class GetListPaginatedQueryHandler<TDto, TRepo> : IRequestHandler<GetListPaginatedQuery<TDto>, PaginatedResultsDto<TDto>>
-    where TDto : class, IDtoEntity 
+    where TDto : class, IDtoEntity
     where TRepo : class, IRepositoryEntity
 {
     private readonly IRepository<TRepo> _repository;

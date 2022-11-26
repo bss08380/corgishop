@@ -2,7 +2,7 @@
 using CorgiShop.Pipeline.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
-namespace CorgiShop.Pipeline.Base;
+namespace CorgiShop.Pipeline.Base.Repositories;
 
 public class RepositoryBase<T> : IRepository<T> where T : class, IRepositoryEntity
 {
@@ -53,6 +53,12 @@ public class RepositoryBase<T> : IRepository<T> where T : class, IRepositoryEnti
     public async Task Create(T entity)
     {
         await _context.Set<T>().AddAsync(entity);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task Update(T newEntity)
+    {
+        _context.Set<T>().Update(newEntity);
         await _context.SaveChangesAsync();
     }
 

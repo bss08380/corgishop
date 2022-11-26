@@ -32,8 +32,17 @@ public class CachedRepository<T> : IRepository<T>
     public async Task<IEnumerable<T>> ListPaginated(int limit, int offset) => 
         await _cachingService.GetOrRefresh(GetPageCacheKey(limit, offset), () => _repository.ListPaginated(limit, offset));
 
-    //TODO: Create
-    //TODO: Update
+    public async Task Create(T newEntity)
+    {
+        await _repository.Create(newEntity);
+        await ClearAllCache();
+    }
+
+    public async Task Update(T entity)
+    {
+        await _repository.Update(entity);
+        await ClearIdAndAllCache(entity.Id);
+    }
 
     public async Task Delete(int id)
     {
@@ -68,4 +77,5 @@ public class CachedRepository<T> : IRepository<T>
     private string GetListCacheKey() => $"{GetCacheKeyBase()}:list";
     private string GetPageCacheKeyBase() => $"{GetCacheKeyBase()}:Page";
     private string GetPageCacheKey(int limit, int offset) => $"{GetPageCacheKeyBase()}:{limit}-{offset}";
+
 }

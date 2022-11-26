@@ -1,5 +1,7 @@
 ﻿using CorgiShop.Pipeline.Abstractions;
 using CorgiShop.Pipeline.Base;
+using CorgiShop.Pipeline.Base.Handlers;
+using CorgiShop.Pipeline.Base.Requests;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,6 +28,7 @@ public static class PipelineIocExtensions
 
         //Queries
         services.AddTransient<IRequestHandler<GetListPaginatedQuery<TDto>, PaginatedResultsDto<TDto>>, GetListPaginatedQueryHandler<TDto, TEntity>>();
+        services.AddTransient<IRequestHandler<GetByIdQuery<TDto>, TDto>, GetByIdQueryHandler<TDto, TEntity>>();
     }
 
     public static void DecorateCrudPipeline<TEntity, TRepositoryInterface, TRepositoryDecorator>(this IServiceCollection services)

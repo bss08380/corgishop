@@ -1,6 +1,7 @@
 ﻿using CorgiShop.Application.Features.Products;
 using CorgiShop.Application.Features.Products.Commands.GenerateProducts;
-using CorgiShop.Pipeline.Base;
+using CorgiShop.Pipeline.Base.Controllers;
+using CorgiShop.Pipeline.Base.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,7 +15,10 @@ public class ProductsController : CrudControllerBase<ProductDto>
     private readonly ISender _mediator;
 
     public ProductsController(ISender sender)
-        : base(sender)
+        : base(sender, new CrudConfiguration()
+        {
+            DeleteMode = DeleteMode.Soft
+        })
     {
         _mediator = sender;
     }

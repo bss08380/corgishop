@@ -1,5 +1,5 @@
 ﻿using CorgiShop.Domain.Model;
-using CorgiShop.Pipeline.Base;
+using CorgiShop.Pipeline.Base.Repositories;
 
 namespace CorgiShop.Domain.Features.Products;
 
