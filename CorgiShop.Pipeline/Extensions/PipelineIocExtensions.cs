@@ -25,10 +25,13 @@ public static class PipelineIocExtensions
 
         //Commands
         services.AddTransient<IRequestHandler<DeleteCommand<TDto>, Unit>, DeleteCommandHandler<TDto, TEntity>>();
+        services.AddTransient<IRequestHandler<CreateCommand<TDto>, TDto>, CreateCommandHandler<TDto, TEntity>>();
+        services.AddTransient<IRequestHandler<UpdateCommand<TDto>, TDto>, UpdateCommandHandler<TDto, TEntity>>();
 
         //Queries
         services.AddTransient<IRequestHandler<GetListPaginatedQuery<TDto>, PaginatedResultsDto<TDto>>, GetListPaginatedQueryHandler<TDto, TEntity>>();
         services.AddTransient<IRequestHandler<GetByIdQuery<TDto>, TDto>, GetByIdQueryHandler<TDto, TEntity>>();
+        services.AddTransient<IRequestHandler<GetCountQuery<TDto>, int>, GetCountQueryHandler<TDto, TEntity>>();
     }
 
     public static void DecorateCrudPipeline<TEntity, TRepositoryInterface, TRepositoryDecorator>(this IServiceCollection services)

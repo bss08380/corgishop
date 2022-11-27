@@ -11,4 +11,5 @@ public class CrudConfiguration
     public bool CreateEnabled { get; set; } = true;
     public bool UpdateEnabled { get; set; } = true;
     public bool GetByIdEnabled { get; set; } = true;
+    public bool GetCountEnabled { get; set; } = true;
 }

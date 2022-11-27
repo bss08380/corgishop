@@ -35,6 +35,14 @@ public abstract class CrudControllerBase<TDto> : Controller
         return Ok(await _mediator.Send(query));
     }
 
+    [HttpGet("count")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult> Get()
+    {
+        if (!_configuration.GetCountEnabled) throw new HttpRequestException("Total count of this entity type is not allowed");
+        return Ok(await _mediator.Send(GetCountQuery<TDto>.Instance));
+    }
+
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult> Get([FromQuery] GetListPaginatedQuery<TDto> query)
@@ -45,7 +53,7 @@ public abstract class CrudControllerBase<TDto> : Controller
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> Create([FromQuery] TDto newEntity)
+    public async Task<ActionResult> Create([FromBody] TDto newEntity)
     {
         if (!_configuration.CreateEnabled) throw new HttpRequestException("Creating new instances for this entity type is not allowed");
         return Ok(await _mediator.Send(new CreateCommand<TDto>(newEntity)));
@@ -53,7 +61,7 @@ public abstract class CrudControllerBase<TDto> : Controller
 
     [HttpPut]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> Update([FromQuery] TDto entity)
+    public async Task<ActionResult> Update([FromBody] TDto entity)
     {
         if (!_configuration.UpdateEnabled) throw new HttpRequestException("Updating instances of this entity type is not allowed");
         return Ok(await _mediator.Send(new UpdateCommand<TDto>(entity)));

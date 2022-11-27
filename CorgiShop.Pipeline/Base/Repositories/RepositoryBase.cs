@@ -50,16 +50,18 @@ public class RepositoryBase<T> : IRepository<T> where T : class, IRepositoryEnti
      * COMMAND
      */
 
-    public async Task Create(T entity)
+    public async Task<T> Create(T newEntity)
     {
-        await _context.Set<T>().AddAsync(entity);
+        await _context.Set<T>().AddAsync(newEntity);
         await _context.SaveChangesAsync();
+        return newEntity;
     }
 
-    public async Task Update(T newEntity)
+    public async Task<T> Update(T entity)
     {
-        _context.Set<T>().Update(newEntity);
+        _context.Set<T>().Update(entity);
         await _context.SaveChangesAsync();
+        return entity;
     }
 
     public async Task Delete(int id)

@@ -29,7 +29,7 @@ public class GetListPaginatedQueryHandler<TDto, TRepo> : IRequestHandler<GetList
         if (request.Limit > _maxPageSizeLimit) throw DetailedException.FromFailedVerification(nameof(request.Limit), $"Maximum limit size is {_maxPageSizeLimit}");
 
         int total = await _repository.Count();
-        var results = (await _repository.ListPaginated(request.Limit, request.Offset)).Select(p => _mapper.Map<TRepo, TDto>(p));
+        var results = (await _repository.ListPaginated(request.Limit, request.Offset)).Select(_mapper.Map<TRepo, TDto>);
 
         return new PaginatedResultsDto<TDto>()
         {
