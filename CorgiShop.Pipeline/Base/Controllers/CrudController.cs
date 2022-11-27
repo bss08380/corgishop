@@ -6,25 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CorgiShop.Pipeline.Base.Controllers;
 
-public abstract class CrudControllerBase<TDto> : Controller
+public abstract class CrudController<TDto> : Controller
     where TDto : class, IDtoEntity
 {
     private readonly ISender _mediator;
     private readonly CrudConfiguration _configuration;
 
-    public CrudControllerBase(ISender sender, CrudConfiguration configuration)
+    public CrudController(ISender sender, CrudConfiguration configuration)
     {
         _mediator = sender;
         _configuration = configuration;
     }
 
-    [HttpDelete("{Id}")]
+    [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> Delete([FromRoute] DeleteCommand<TDto> command)
+    public async Task<ActionResult> Get([FromQuery] GetListPaginatedQuery<TDto> query)
     {
-        if (!_configuration.DeleteEnabled) throw new HttpRequestException("Deltion of this entity type is not allowed");
-        command.Mode = _configuration.DeleteMode;
-        return Ok(await _mediator.Send(command));
+        if (!_configuration.ListEnabled) throw new HttpRequestException("Listing of this entity type is not allowed");
+        return Ok(await _mediator.Send(query));
     }
 
     [HttpGet("{Id}")]
@@ -37,18 +36,20 @@ public abstract class CrudControllerBase<TDto> : Controller
 
     [HttpGet("count")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> Get()
+    public async Task<ActionResult> Count()
     {
         if (!_configuration.GetCountEnabled) throw new HttpRequestException("Total count of this entity type is not allowed");
         return Ok(await _mediator.Send(GetCountQuery<TDto>.Instance));
     }
 
-    [HttpGet]
+    [HttpDelete("{Id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult> Get([FromQuery] GetListPaginatedQuery<TDto> query)
+    public async Task<ActionResult> Delete([FromRoute] DeleteCommand<TDto> command)
     {
-        if (!_configuration.ListEnabled) throw new HttpRequestException("Listing of this entity type is not allowed");
-        return Ok(await _mediator.Send(query));
+        if (!_configuration.DeleteEnabled) throw new HttpRequestException("Deltion of this entity type is not allowed");
+        command.Mode = _configuration.DeleteMode;
+        await _mediator.Send(command);
+        return Ok();
     }
 
     [HttpPost]

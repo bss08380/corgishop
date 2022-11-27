@@ -10,7 +10,7 @@ namespace CorgiShop.Api.Controllers;
 [ApiController]
 [Route("[controller]")]
 [Produces("application/json")]
-public class ProductsController : CrudControllerBase<ProductDto>
+public class ProductsController : CrudController<ProductDto>
 {
     private readonly ISender _mediator;
 
