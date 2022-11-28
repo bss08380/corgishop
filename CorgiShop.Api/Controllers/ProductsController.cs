@@ -1,6 +1,7 @@
 ﻿using CorgiShop.Application.Features.Products;
 using CorgiShop.Application.Features.Products.Commands.GenerateProducts;
-using CorgiShop.Pipeline.Base;
+using CorgiShop.Pipeline.Base.Controllers;
+using CorgiShop.Pipeline.Base.Requests;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,12 +10,15 @@ namespace CorgiShop.Api.Controllers;
 [ApiController]
 [Route("[controller]")]
 [Produces("application/json")]
-public class ProductsController : CrudControllerBase<ProductDto>
+public class ProductsController : CrudController<ProductDto>
 {
     private readonly ISender _mediator;
 
     public ProductsController(ISender sender)
-        : base(sender)
+        : base(sender, new CrudConfiguration()
+        {
+            DeleteMode = DeleteMode.Soft
+        })
     {
         _mediator = sender;
     }

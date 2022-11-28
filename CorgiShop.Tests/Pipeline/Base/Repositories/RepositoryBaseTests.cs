@@ -1,10 +1,9 @@
 ﻿using CorgiShop.Common.Exceptions;
-using CorgiShop.Domain.Model;
 using CorgiShop.Pipeline.Abstractions;
-using CorgiShop.Pipeline.Base;
+using CorgiShop.Pipeline.Base.Repositories;
 using CorgiShop.Tests.Base;
 
-namespace CorgiShop.Tests.Pipeline.Base;
+namespace CorgiShop.Tests.Pipeline.Base.Repositories;
 
 /*
  * Product entities are used for testing here
@@ -91,7 +90,49 @@ public class RepositoryBaseTests : TestBase
     }
 
     [Fact]
-    public async Task Delete_SoftDeleted()
+    public async Task Create_Created()
+    {
+        //Arrange
+        var uut = await GetUut(0, 0);
+        var testo = new Testo() { TestingId = 9 };
+        //Act
+        await uut.Create(testo);
+        //Assert
+        Assert.Single(UnitTestDbContext!.Testos);
+        Assert.NotNull(UnitTestDbContext!.Testos.FirstOrDefault(p => p.TestingId == 9));
+    }
+
+    [Fact]
+    public async Task Update_Updated()
+    { 
+        //Arrange
+        var uut = await GetUut(10, 0);
+        var testo = UnitTestDbContext!.Testos.FirstOrDefault();
+        //Act
+        testo!.TestingId = 99;
+        await uut.Update(testo);
+        var testoConfirmed = UnitTestDbContext!.Testos.FirstOrDefault(t => t.TestingId == 99);
+        //Assert
+        Assert.NotNull(testoConfirmed);
+        Assert.Single(UnitTestDbContext!.Testos.Where(p => p.TestingId == 99));
+    }
+
+    [Fact]
+    public async Task Delete_Deleted()
+    {
+        //Arrange
+        var uut = await GetUut(10, 0);
+        var firstTestoId = UnitTestDbContext!.Testos.FirstOrDefault()!.Id;
+        //Act
+        await uut.Delete(firstTestoId);
+        //Assert
+        Assert.Equal(9, UnitTestDbContext.Testos.Count());
+        Assert.Empty(UnitTestDbContext.Testos.Where(p => p.IsDeleted));
+        Assert.Null(UnitTestDbContext!.Testos.FirstOrDefault(p => p.Id == firstTestoId));
+    }
+
+    [Fact]
+    public async Task SoftDelete_SoftDeleted()
     {
         //Arrange
         var uut = await GetUut(10, 0);
