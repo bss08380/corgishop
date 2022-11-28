@@ -91,7 +91,7 @@ public static class BuilderExtensions
 
         builder.Services.AddScoped<ICachingService, CachingService>();
 
-        builder.Services.AddCrudPipeline<Product, ProductDto, IProductRepository, ProductRepository>();
+        builder.Services.AddCrudPipeline<Product, ProductDto, IProductRepository, ProductRepository>(new PipelineConfiguration(true));
         builder.Services.DecorateCrudPipeline<Product, IProductRepository, CachedProductRepository>();
 
         builder.Services.AddTransient<IProductDataGenService, ProductDataGenService>();
