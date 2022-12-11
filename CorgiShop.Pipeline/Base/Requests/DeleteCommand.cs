@@ -1,4 +1,5 @@
 ﻿using CorgiShop.Pipeline.Abstractions;
+using CorgiShop.Pipeline.Model.Abstractions;
 using MediatR;
 using System.Text.Json.Serialization;
 

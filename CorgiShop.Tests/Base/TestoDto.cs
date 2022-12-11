@@ -1,4 +1,4 @@
-﻿using CorgiShop.Pipeline.Abstractions;
+﻿using CorgiShop.Pipeline.Model.Abstractions;
 
 namespace CorgiShop.Tests.Base;
 

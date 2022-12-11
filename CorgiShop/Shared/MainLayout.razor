@@ -1,15 +1,31 @@
-﻿@inherits LayoutComponentBase
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
     <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <div class="d-flex justify-content-between align-items-center main-nav-bar">
+            <div class="d-flex justify-content-between align-items-center">
+                <img class="logo-img" src="images/corgi.png" />                <div class="p-2">
+                    CorgiShop!
+                </div>
+                <NavLink class="p-2" href="home" Match="NavLinkMatch.All">HOME</NavLink>
+                <NavLink class="p-2" href="shop" Match="NavLinkMatch.All">SHOP</NavLink>
+                <NavLink class="p-2" href="admin" Match="NavLinkMatch.All">ADMIN</NavLink>
+                <NavLink class="p-2" href="about" Match="NavLinkMatch.All">ABOUT</NavLink>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <AuthorizeView>
+                    <Authorized>
+                        <a href="authentication/profile">Hello, @context.User.Identity?.Name!</a>
+                        <button class="nav-link btn btn-link" >Log out</button>
+                    </Authorized>
+                    <NotAuthorized>
+                        <a href="authentication/register">Register</a>
+                        <a href="authentication/login">Log in</a>
+                    </NotAuthorized>
+                </AuthorizeView>
+            </div>
         </div>
-
         <article class="content px-4">
             @Body
         </article>

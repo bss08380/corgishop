@@ -1,0 +1,31 @@
+﻿@page "/shop"
+
+@using CorgiShop.Application.Model.Features.Products;
+@using CorgiShop.Client.Services.Features.Products;
+@using CorgiShop.Pipeline.Model.Base;
+@using Microsoft.AspNetCore.Authorization;
+
+@inject IProductService productService;
+
+@attribute [AllowAnonymous]
+
+<PageTitle>Shop</PageTitle>
+
+<h1>Available Products</h1>
+
+@code {
+    private PaginatedResultsDto<ProductDto>? products;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            products = await productService.GetProducts(100, 0);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        Console.WriteLine(products);
+    }
+}

@@ -2,6 +2,8 @@
 using CorgiShop.Common.Exceptions;
 using CorgiShop.Pipeline.Abstractions;
 using CorgiShop.Pipeline.Base.Requests;
+using CorgiShop.Pipeline.Model.Abstractions;
+using CorgiShop.Pipeline.Model.Base;
 using MediatR;
 
 namespace CorgiShop.Pipeline.Base.Handlers;

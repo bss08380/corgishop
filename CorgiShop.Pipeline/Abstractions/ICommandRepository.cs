@@ -1,4 +1,6 @@
-﻿namespace CorgiShop.Pipeline.Abstractions;
+﻿using CorgiShop.Pipeline.Model.Abstractions;
+
+namespace CorgiShop.Pipeline.Abstractions;
 
 public interface ICommandRepository<T> where T : IRepositoryEntity
 {

@@ -3,6 +3,8 @@ using CorgiShop.Pipeline.Abstractions;
 using CorgiShop.Pipeline.Base;
 using CorgiShop.Pipeline.Base.Handlers;
 using CorgiShop.Pipeline.Base.Requests;
+using CorgiShop.Pipeline.Model.Abstractions;
+using CorgiShop.Pipeline.Model.Base;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
