@@ -1,4 +1,4 @@
-﻿using CorgiShop.Pipeline.Abstractions;
+﻿using CorgiShop.Pipeline.Model.Abstractions;
 using MediatR;
 
 namespace CorgiShop.Pipeline.Base;

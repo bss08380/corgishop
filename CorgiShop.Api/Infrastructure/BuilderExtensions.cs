@@ -3,6 +3,7 @@ using CorgiShop.Application.Caching;
 using CorgiShop.Application.Extensions;
 using CorgiShop.Application.Features.Products;
 using CorgiShop.Application.Middleware;
+using CorgiShop.Application.Model.Features.Products;
 using CorgiShop.Common.Settings;
 using CorgiShop.DataGen.Services;
 using CorgiShop.Domain.Features.Products;

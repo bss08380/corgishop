@@ -1,4 +1,4 @@
-﻿namespace CorgiShop.Pipeline.Base;
+﻿namespace CorgiShop.Pipeline.Model.Base;
 
 public record QueryPageDto
 {
@@ -11,17 +11,17 @@ public record QueryPageDto
     public required int CurrentLimit { get; set; }
     public required int CurrentOffset { get; set; }
 
-    public static QueryPageDto FromCurrentPage(int totalAvailable, int currentLimit, int currentOffset) => 
+    public static QueryPageDto FromCurrentPage(int totalAvailable, int currentLimit, int currentOffset) =>
         new QueryPageDto()
         {
-            CanGoForward = totalAvailable > (currentOffset + currentLimit),
+            CanGoForward = totalAvailable > currentOffset + currentLimit,
             CanGoBackward = currentOffset > 0,
 
-            NextOffset = 
+            NextOffset =
                 Math.Max(
-                    0, 
+                    0,
                     Math.Min(
-                        totalAvailable - currentLimit, 
+                        totalAvailable - currentLimit,
                         currentOffset + currentLimit)),
 
             PreviousOffset = Math.Max(0, currentOffset - currentLimit),

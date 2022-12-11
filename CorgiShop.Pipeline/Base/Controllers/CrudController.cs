@@ -1,5 +1,6 @@
 ﻿using CorgiShop.Pipeline.Abstractions;
 using CorgiShop.Pipeline.Base.Requests;
+using CorgiShop.Pipeline.Model.Abstractions;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

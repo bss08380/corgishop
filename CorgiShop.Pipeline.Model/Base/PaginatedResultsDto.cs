@@ -1,4 +1,4 @@
-﻿namespace CorgiShop.Pipeline.Base;
+﻿namespace CorgiShop.Pipeline.Model.Base;
 
 public record PaginatedResultsDto<T>
 {

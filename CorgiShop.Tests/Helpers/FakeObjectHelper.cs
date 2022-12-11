@@ -1,4 +1,5 @@
 ﻿using CorgiShop.Pipeline.Base;
+using CorgiShop.Pipeline.Model.Base;
 using CorgiShop.Tests.Base;
 
 namespace CorgiShop.Tests.Helpers;

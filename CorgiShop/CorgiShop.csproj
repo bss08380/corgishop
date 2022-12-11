@@ -23,9 +23,18 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\CorgiShop.Application.Model\CorgiShop.Application.Model.csproj" />
+      <ProjectReference Include="..\CorgiShop.Client.Services\CorgiShop.Client.Services.csproj" />
+      <ProjectReference Include="..\CorgiShop.Pipeline.Model\CorgiShop.Pipeline.Model.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
         <Content Update="wwwroot\appsettings.Development.json">
             <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
             <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </Content>
+        <Content Update="wwwroot\images\corgi.png">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 

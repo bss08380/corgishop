@@ -1,4 +1,5 @@
 ﻿using CorgiShop.Pipeline.Abstractions;
+using CorgiShop.Pipeline.Model.Abstractions;
 using Microsoft.Extensions.Logging;
 
 namespace CorgiShop.Application.Caching;

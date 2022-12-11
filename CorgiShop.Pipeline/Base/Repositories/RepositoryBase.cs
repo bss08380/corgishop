@@ -1,5 +1,6 @@
 ﻿using CorgiShop.Common.Exceptions;
 using CorgiShop.Pipeline.Abstractions;
+using CorgiShop.Pipeline.Model.Abstractions;
 using Microsoft.EntityFrameworkCore;
 
 namespace CorgiShop.Pipeline.Base.Repositories;

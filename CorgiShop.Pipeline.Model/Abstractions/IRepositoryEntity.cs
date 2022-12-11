@@ -1,4 +1,4 @@
-﻿namespace CorgiShop.Pipeline.Abstractions;
+﻿namespace CorgiShop.Pipeline.Model.Abstractions;
 
 public interface IRepositoryEntity
 {

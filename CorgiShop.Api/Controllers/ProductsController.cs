@@ -1,5 +1,5 @@
-﻿using CorgiShop.Application.Features.Products;
-using CorgiShop.Application.Features.Products.Commands.GenerateProducts;
+﻿using CorgiShop.Application.Features.Products.Commands.GenerateProducts;
+using CorgiShop.Application.Model.Features.Products;
 using CorgiShop.Pipeline.Base.Controllers;
 using CorgiShop.Pipeline.Base.Requests;
 using MediatR;
